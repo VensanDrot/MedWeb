@@ -7,8 +7,9 @@
     height: 100px;
     width: 100vw;
     color: var(--black);
-    transition: var(--transition);
+    transition:  var(--transition);
     background-color: rgba(255, 255, 255, 0.85);
+
 }
 
 .nav_active { 
@@ -42,6 +43,7 @@
 }
 
 .nav_link_holder {
+    transition:   var(--transition);
     position: absolute;
     right: 14px;
     width: 84%;
@@ -69,43 +71,39 @@
 
 .nav_link_mobile{
     height: 0;
-    transition: var(--transition);
+    transition: all var(--transition);
     overflow: hidden;
     display: flex !important;
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    margin-top: 105px;
+    margin-top: 100px;
     row-gap: 1rem;
 }
 
 .nav_link_mobile_active {
-    height: 400px;
+    height: 295px;
 }
 
 .nav_container_mobile{ 
-    height: 410px;
+    
+    height: 396px;
     background-color: rgba(255, 255, 255, 1);
+}
+
+.nav_container_mobile  .tooltip{ 
+    display: none !important;
 }
 
 /* socials */
 
 .socials_container {
     display: flex;
-    transition: var(--transition);
+    transition: all var(--transition);
     align-items: center;    
     gap: 0.5rem;
 }
-
-.socials_container_mob {
-    height: 0;
-    overflow: hidden;
-}
-
-.socials_container_active{
-    height: 60px;
-    overflow: visible;
-}
+ 
 
 .icon {
     position: relative;
@@ -180,10 +178,7 @@
     background: #e1306c;
 }
  
-.lock {
-    pointer-events: none;
-}
-
+ 
  
 @media screen and (max-width: 1300px) {
     .nav_box{

@@ -40,12 +40,8 @@ const Nav = () => {
           <Hamburger size={35} toggled={isOpen} toggle={setOpen} />
         </div>
 
-        <div
-          className={`
-          ${isOpen ? `${styles.nav_link_mobile} ${styles.nav_link_mobile_active}` : styles.nav_link_mobile} ${
-            styles.nav_link_holder
-          } `}
-        >
+        {/* PC Version */}
+        <div className={styles.nav_link_holder}>
           <Link href="/qapaghe">Hydration Services</Link>
           <Link href="/qapaghe">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
@@ -53,11 +49,7 @@ const Nav = () => {
           <Link href="/qapaghe" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
-          <div
-            className={
-              isOpen ? `${styles.socials_container_active} ${styles.socials_container}` : styles.socials_container_mob
-            }
-          >
+          <div className={styles.socials_container}>
             <div className={`${styles.icon} ${styles.facebook}`}>
               <div className={styles.tooltip}>Facebook</div>
               <span>
@@ -73,8 +65,14 @@ const Nav = () => {
           </div>
         </div>
 
-        {/* PC Version  <div className={styles.socials_container}>*/}
-        <div className={styles.nav_link_holder}>
+        {/* Mobile */}
+
+        <div
+          className={`
+          ${isOpen ? `${styles.nav_link_mobile} ${styles.nav_link_mobile_active}` : styles.nav_link_mobile} ${
+            styles.nav_link_holder
+          } `}
+        >
           <Link href="/qapaghe">Hydration Services</Link>
           <Link href="/qapaghe">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
