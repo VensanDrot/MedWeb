@@ -80,11 +80,11 @@
 }
 
 .nav_link_mobile_active {
-    height: 380px;
+    height: 400px;
 }
 
 .nav_container_mobile{ 
-    height: 420px;
+    height: 410px;
     background-color: rgba(255, 255, 255, 1);
 }
 
@@ -92,9 +92,19 @@
 
 .socials_container {
     display: flex;
-    height: 100px;
+    transition: var(--transition);
     align-items: center;    
     gap: 0.5rem;
+}
+
+.socials_container_mob {
+    height: 0;
+    overflow: hidden;
+}
+
+.socials_container_active{
+    height: 60px;
+    overflow: visible;
 }
 
 .icon {
@@ -170,7 +180,9 @@
     background: #e1306c;
 }
  
-
+.lock {
+    pointer-events: none;
+}
 
  
 @media screen and (max-width: 1300px) {
