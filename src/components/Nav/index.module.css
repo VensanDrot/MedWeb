@@ -1,0 +1,55 @@
+.nav_container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    z-index: 4;
+    height: 100px;
+    width: 100vw;
+    color: var(--black);
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav_active { 
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.nav_box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 92px;
+    width: 65vw;
+    margin: 0 auto;
+}
+
+.nav_img {
+    position: absolute;
+    left: 0;
+    height: 95px;
+    width: auto;
+}
+
+.nav_link_holder {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    text-transform: uppercase;
+    height: 92px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+    gap: 2rem;
+}
+
+.nav_link_holder a:hover{
+    color: var(--aqua);
+}
+

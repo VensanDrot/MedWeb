@@ -1,0 +1,28 @@
+.main_section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 110px;   
+    background: url("../img/home.jpg");
+    background-size: cover;
+    background-position: right bottom;
+}
+
+.main_text_box {
+    text-align: center;
+    height: 50vh;
+    width: 40vw;
+    margin: 10vh auto auto 15vw;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.main_text_box > * {
+    margin-bottom: 1.3rem;
+}
+
+.main_text_box a{
+    font-weight: 300 !important; 
+    font-size: 1.6rem;
+}
