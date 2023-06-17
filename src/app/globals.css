@@ -18,10 +18,8 @@
 
 * {
   box-sizing: border-box;
-
   padding: 0;
   margin: 0;
-  text-decoration: none !important;
   color: inherit;
   text-decoration: none;
   font-size: inherit;
