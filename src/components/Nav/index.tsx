@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
 import img from "../../img/logo.png";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Nav = () => {
   const [navbar, setNavbar] = useState(false);
@@ -34,6 +35,7 @@ const Nav = () => {
         <Link href="/" className={styles.nav_img_con}>
           <Image src={img} alt="Chilling" className={styles.nav_img} />
         </Link>
+
         <div className={styles.Hamburger_container}>
           <Hamburger size={35} toggled={isOpen} toggle={setOpen} />
         </div>
@@ -51,8 +53,23 @@ const Nav = () => {
           <Link href="/qapaghe" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
+          <div className={styles.socials_container}>
+            <div className={`${styles.icon} ${styles.facebook}`}>
+              <div className={styles.tooltip}>Facebook</div>
+              <span>
+                <FaFacebookF />
+              </span>
+            </div>
+            <div className={`${styles.icon} ${styles.instagram}`}>
+              <div className={styles.tooltip}>Instagram</div>
+              <span>
+                <FaInstagram />
+              </span>
+            </div>
+          </div>
         </div>
 
+        {/* PC Version */}
         <div className={styles.nav_link_holder}>
           <Link href="/qapaghe">Hydration Services</Link>
           <Link href="/qapaghe">FAQ Page</Link>
@@ -61,6 +78,20 @@ const Nav = () => {
           <Link href="/qapaghe" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
+          <div className={styles.socials_container}>
+            <div className={`${styles.icon} ${styles.facebook}`}>
+              <div className={styles.tooltip}>Facebook</div>
+              <span>
+                <FaFacebookF />
+              </span>
+            </div>
+            <div className={`${styles.icon} ${styles.instagram}`}>
+              <div className={styles.tooltip}>Instagram</div>
+              <span>
+                <FaInstagram />
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </header>

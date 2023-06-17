@@ -46,7 +46,6 @@ h1 {
 section {
   height: 100vh;
   width: 100vw;
-   
 }
 
 /* often used */
@@ -65,44 +64,3 @@ section {
     color: var(--white) !important;
 }
 
-
-.container {
-    width: var(--container-width-lg);
-    height: auto;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-
-
-
-@media screen and (max-width: 1024px) {
-    .container {
-        width: var(--container-width-md);
-    }
-}
-
-
-/* ================== MEDIA QUERIES (SMALL DEVICES) ============= */
-
-@media screen and (max-width: 600px) {
-    .container {
-        width: var(--container-width-sm);
-    }
-    .welcome {
-        margin-top: 1.2rem;
-    }
-    body {
-        background-size: fill;
-    }
-}
-
-
-/* ================== MEDIA QUERIES (Extra SMALL DEVICES) ============= */
-
-@media screen and (max-width: 450px) {
-    .container {
-        width: var(--container-width-sm);
-    }
-}

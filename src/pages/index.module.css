@@ -6,7 +6,7 @@
     padding-top: 110px;   
     background: url("../img/home.jpg");
     background-size: cover;
-    background-position: right bottom;
+    background-position: right top;
 }
 
 .main_text_box {
@@ -25,4 +25,50 @@
 .main_text_box a{
     font-weight: 300 !important; 
     font-size: 1.6rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+   .main_text_box {
+    margin-top: 17vh;
+    font-weight: 300;
+    width: 70vw;
+   }
+}
+
+@media screen and (max-width: 900px) {
+     .main_section {
+    background-position: -631px top;
+   }
+    
+}
+
+/* ================== MEDIA QUERIES (SMALL DEVICES) ============= */
+
+@media screen and (max-width: 600px) {
+    .main_text_box {
+    margin-top: 17vh;
+    font-weight: 300;
+    width: 90vw;
+    margin-left: auto !important;
+   }
+    .main_section {
+    background-position: -767px top;
+   }
+  
+}
+
+
+/* ================== MEDIA QUERIES (Extra SMALL DEVICES) ============= */
+
+@media screen and (max-width: 500px) {
+   .main_text_box > h1 {
+    font-size: 2rem;
+   }
+   .main_text_box > * {
+    font-size: 1.7rem;
+   }
+   .main_section {
+    background-position: 881px bottom;
+   }
 }
