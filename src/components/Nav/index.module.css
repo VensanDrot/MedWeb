@@ -74,6 +74,7 @@
     transition: all var(--transition);
     overflow: hidden;
     display: flex !important;
+    right: 0 !important;
     flex-direction: column;
     align-items: center;
     width: 100vw;
