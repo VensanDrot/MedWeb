@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./index.module.css";
+import GetStarted from "@/components/GetStarted";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
+      <GetStarted />
       <section>dsadsa</section>
       <section>hello</section>
     </div>
