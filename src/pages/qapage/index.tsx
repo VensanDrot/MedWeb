@@ -87,10 +87,8 @@ const QAPage = () => {
     },
   ];
 
-  const handleClick = (e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {};
-
   const divElement = (e: DivInterface) => {
-    const parentRef = useRef<HTMLDivElement>(null);
+    const parentRef = useRef<HTMLDivElement | null>(null);
     const [open, setOpen] = useState(false);
     return (
       <div key={e.id} className={styles.answer_container}>
@@ -139,14 +137,3 @@ const QAPage = () => {
 };
 
 export default QAPage;
-
-{
-  /*
-<div key={e.id} className={styles.answer_container}>
-              <h1 role="button" id={`${e.id}`} onClick={() => setOpen(!open)}>
-                {e.question}
-              </h1>
-              <div className={`${open ? styles.open_active : ""} ${styles.open}`}>{e.answer}</div>
-            </div>
-*/
-}
