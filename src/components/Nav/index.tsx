@@ -73,8 +73,8 @@ const Nav = () => {
             styles.nav_link_holder
           } `}
         >
-          <Link href="/qapaghe">Hydration Services</Link>
-          <Link href="/qapaghe">FAQ Page</Link>
+          <Link href="/qapage">Hydration Services</Link>
+          <Link href="/qapage">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
           <Link href="/qapage">Contact</Link>
           <Link href="/qapage" className="yellow">
