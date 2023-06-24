@@ -1,0 +1,42 @@
+.qa_main_container{
+    background-color: var(--grey);
+}
+
+.qa_container {
+    padding-top: 1.5rem;
+    list-style: none;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+
+.answer_container > h1 {
+    font-size: 2rem;
+    color: var(--aqua);
+    font-weight: 500;
+}
+
+.answer_container > p {
+    
+    margin-left: 24px;
+    white-space: pre-line;
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+}
+
+.answer_container > p > strong,
+.answer_container > p > b {
+    color: var(--aqua);
+}
+
+.answer_container >p::before,
+.answer_container > p > strong::before {
+    color: var(--black);
+    font-weight: bold;
+    content: "-- "
+    
+}

@@ -13,7 +13,7 @@ const Nav = () => {
   const isBrowser = () => typeof window !== "undefined";
 
   const changeBackground = () => {
-    console.log(scrollY);
+    // console.log(scrollY);
     if (window.scrollY >= 100) {
       setNavbar(true);
     } else {
@@ -42,11 +42,11 @@ const Nav = () => {
 
         {/* PC Version */}
         <div className={styles.nav_link_holder}>
-          <Link href="/qapaghe">Hydration Services</Link>
-          <Link href="/qapaghe">FAQ Page</Link>
+          <Link href="/qapage">Hydration Services</Link>
+          <Link href="/qapage">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
-          <Link href="/qapaghe">Contact</Link>
-          <Link href="/qapaghe" className="yellow">
+          <Link href="/qapage">Contact</Link>
+          <Link href="/qapage" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
@@ -76,8 +76,8 @@ const Nav = () => {
           <Link href="/qapaghe">Hydration Services</Link>
           <Link href="/qapaghe">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
-          <Link href="/qapaghe">Contact</Link>
-          <Link href="/qapaghe" className="yellow">
+          <Link href="/qapage">Contact</Link>
+          <Link href="/qapage" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
