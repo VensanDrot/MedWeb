@@ -87,7 +87,7 @@ const QAPage = () => {
     },
   ];
 
-  const divElement = (e: DivInterface) => {
+  const DivElement = (e: DivInterface) => {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const [open, setOpen] = useState(false);
     return (
@@ -128,7 +128,7 @@ const QAPage = () => {
     <div className={`${styles.qa_main_container} spacer `}>
       <div className={styles.qa_container}>
         {question_answers.map((e) => {
-          return divElement(e);
+          return DivElement(e);
         })}
       </div>
       <GetStarted />
