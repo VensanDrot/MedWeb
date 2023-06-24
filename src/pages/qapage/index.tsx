@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import styles from "./index.module.css";
 import GetStarted from "@/components/GetStarted";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { Rotate } from "hamburger-react";
 
 interface DivInterface {
   id: number;
@@ -93,6 +95,15 @@ const QAPage = () => {
     return (
       <div key={e.id} className={styles.answer_container}>
         <h1 className={styles.active} role="button" id={`${e.id}`} onClick={() => setOpen(!open)}>
+          <AiOutlineArrowRight
+            style={
+              open
+                ? {
+                    transform: "rotate(90deg)",
+                  }
+                : {}
+            }
+          />
           {e.question}
         </h1>
         <div
