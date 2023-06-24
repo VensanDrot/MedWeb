@@ -42,11 +42,11 @@ const Nav = () => {
 
         {/* PC Version */}
         <div className={styles.nav_link_holder}>
-          <Link href="/qapage">Hydration Services</Link>
+          <Link href="/">Hydration Services</Link>
           <Link href="/qapage">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
-          <Link href="/qapage">Contact</Link>
-          <Link href="/qapage" className="yellow">
+          <Link href="/">Contact</Link>
+          <Link href="/" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
@@ -73,11 +73,19 @@ const Nav = () => {
             styles.nav_link_holder
           } `}
         >
-          <Link href="/qapage">Hydration Services</Link>
-          <Link href="/qapage">FAQ Page</Link>
-          <Link href="/aboutus">About us</Link>
-          <Link href="/qapage">Contact</Link>
-          <Link href="/qapage" className="yellow">
+          <Link href="/" onClick={() => setOpen(!isOpen)}>
+            Hydration Services
+          </Link>
+          <Link href="/qapage" onClick={() => setOpen(!isOpen)}>
+            FAQ Page
+          </Link>
+          <Link href="/aboutus" onClick={() => setOpen(!isOpen)}>
+            About us
+          </Link>
+          <Link href="/" onClick={() => setOpen(!isOpen)}>
+            Contact
+          </Link>
+          <Link href="/" onClick={() => setOpen(!isOpen)} className="yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
