@@ -20,12 +20,13 @@
 }
 
 .answer_container >h1 >svg {
+    line-height: 2rem;
+    font-size: 1.5rem;
     transition: all ease-in-out var(--transition);
 }
 
 .answer_container > h1 {
-    display: flex;
-    align-items: center;
+    
     cursor: pointer;
     position: relative;
     white-space: pre-wrap;
