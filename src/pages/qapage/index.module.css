@@ -36,7 +36,7 @@
  
 
 .open > p {
-    
+    padding-bottom: 15px;
     margin-left: 24px;
     white-space: pre-line;
     font-size: 1.3rem;
