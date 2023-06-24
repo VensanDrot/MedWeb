@@ -1,8 +1,9 @@
 .qa_main_container{
-    background-color: var(--grey);
+ 
 }
 
 .qa_container {
+    
     padding-top: 1.5rem;
     list-style: none;
     width: 90vw;
@@ -13,14 +14,25 @@
     row-gap: 2rem;
 }
 
+.open {
+    padding: 15px 0;
+    transition: all ease-in-out var(--transition);
+    overflow: hidden;
+    
+}
 
 .answer_container > h1 {
+    
+    cursor: pointer;
+    position: relative;
+    white-space: pre-wrap;
     font-size: 2rem;
     color: var(--aqua);
     font-weight: 500;
 }
+ 
 
-.answer_container > p {
+.open > p {
     
     margin-left: 24px;
     white-space: pre-line;
@@ -28,13 +40,13 @@
     margin-top: 1.2rem;
 }
 
-.answer_container > p > strong,
-.answer_container > p > b {
+.open > p > strong,
+.open > p > b {
     color: var(--aqua);
 }
 
-.answer_container >p::before,
-.answer_container > p > strong::before {
+.open > p::before,
+.open > p > strong::before {
     color: var(--black);
     font-weight: bold;
     content: "-- "

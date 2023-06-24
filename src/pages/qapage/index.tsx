@@ -1,5 +1,12 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styles from "./index.module.css";
+import GetStarted from "@/components/GetStarted";
+
+interface DivInterface {
+  id: number;
+  question: string;
+  answer: any;
+}
 
 const QAPage = () => {
   const question_answers: { id: number; question: string; answer: any }[] = [
@@ -78,20 +85,57 @@ const QAPage = () => {
     },
   ];
 
+  const handleClick = (e: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => {};
+
+  const divElement = (e: DivInterface) => {
+    const parentRef = useRef<HTMLDivElement>(null);
+    const [open, setOpen] = useState(false);
+    return (
+      <div key={e.id} className={styles.answer_container}>
+        <h1 className={styles.active} role="button" id={`${e.id}`} onClick={() => setOpen(!open)}>
+          {e.question}
+        </h1>
+        <div
+          ref={parentRef}
+          className={styles.open}
+          style={
+            open
+              ? {
+                  boxShadow: "  0px 6px 3px -3px rgba(0, 0, 0, 0.15)",
+                  height: parentRef.current?.scrollHeight + "px",
+                }
+              : {
+                  height: 0,
+                }
+          }
+        >
+          {e.answer}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={`${styles.qa_main_container} spacer `}>
-      <ul className={styles.qa_container}>
+      <div className={styles.qa_container}>
         {question_answers.map((e) => {
-          return (
-            <li key={e.id} className={styles.answer_container}>
-              <h1>{e.question}</h1>
-              {e.answer}
-            </li>
-          );
+          return divElement(e);
         })}
-      </ul>
+      </div>
+      <GetStarted />
     </div>
   );
 };
 
 export default QAPage;
+
+{
+  /*
+<div key={e.id} className={styles.answer_container}>
+              <h1 role="button" id={`${e.id}`} onClick={() => setOpen(!open)}>
+                {e.question}
+              </h1>
+              <div className={`${open ? styles.open_active : ""} ${styles.open}`}>{e.answer}</div>
+            </div>
+*/
+}

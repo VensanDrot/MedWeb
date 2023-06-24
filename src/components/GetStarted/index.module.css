@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%; 
-    padding-bottom: 2rem;
+    padding: 3rem 0;
     background:var(--grey);
     }
 
