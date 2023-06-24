@@ -117,6 +117,7 @@ const QAPage = () => {
                   height: 0,
                 }
           }
+          onClick={() => setOpen(!open)}
         >
           {e.answer}
         </div>
