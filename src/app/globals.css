@@ -41,7 +41,7 @@ body {
 /* components */
 
 a,h1 {
-    white-space: nowrap;
+    
     height: fit-content;
 }
  

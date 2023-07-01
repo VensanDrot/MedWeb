@@ -50,18 +50,22 @@ const Nav = () => {
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
-            <div className={`${styles.icon} ${styles.facebook}`}>
-              <div className={styles.tooltip}>Facebook</div>
-              <span>
-                <FaFacebookF />
-              </span>
-            </div>
-            <div className={`${styles.icon} ${styles.instagram}`}>
-              <div className={styles.tooltip}>Instagram</div>
-              <span>
-                <FaInstagram />
-              </span>
-            </div>
+            <a href="https://www.facebook.com/HydratioNationIV/" target="_blank">
+              <div className={`${styles.icon} ${styles.facebook}`}>
+                <div className={styles.tooltip}>Facebook</div>
+                <span>
+                  <FaFacebookF />
+                </span>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/hydrationationiv/" target="_blank">
+              <div className={`${styles.icon} ${styles.instagram}`}>
+                <div className={styles.tooltip}>Instagram</div>
+                <span>
+                  <FaInstagram />
+                </span>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -89,18 +93,22 @@ const Nav = () => {
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
-            <div className={`${styles.icon} ${styles.facebook}`}>
-              <div className={styles.tooltip}>Facebook</div>
-              <span>
-                <FaFacebookF />
-              </span>
-            </div>
-            <div className={`${styles.icon} ${styles.instagram}`}>
-              <div className={styles.tooltip}>Instagram</div>
-              <span>
-                <FaInstagram />
-              </span>
-            </div>
+            <a href="https://www.facebook.com/HydratioNationIV/" target="_blank">
+              <div className={`${styles.icon} ${styles.facebook}`}>
+                <div className={styles.tooltip}>Facebook</div>
+                <span>
+                  <FaFacebookF />
+                </span>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/hydrationationiv/" target="_blank">
+              <div className={`${styles.icon} ${styles.instagram}`}>
+                <div className={styles.tooltip}>Instagram</div>
+                <span>
+                  <FaInstagram />
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

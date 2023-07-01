@@ -18,8 +18,6 @@ export default function Home() {
         </div>
       </section>
       <GetStarted />
-      <section>dsadsa</section>
-      <section>hello</section>
     </div>
   );
 }

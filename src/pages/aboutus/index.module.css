@@ -1,0 +1,37 @@
+.AboutUs_container {
+    margin-top: 100px;
+}
+
+.about_container {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.8rem;
+    width: 90vw;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 3.5rem;
+}
+
+
+.kid_container > p {
+    font-size: 2rem;
+    font-weight: 300;
+    
+}
+
+.kid_container > p::before {
+content: "- ";
+font-weight: 600;
+}
+
+.kid_container > p > b {
+    color: var(--aqua);
+}
+
+
+@media screen and (max-width: 700px) {
+   .about_container {
+    row-gap: 2.4rem;
+   }
+}
