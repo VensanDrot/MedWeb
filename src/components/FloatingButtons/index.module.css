@@ -6,33 +6,45 @@
     bottom: 75px;
 }
 
-.floating_Container > a {
-    font-size: 1.7rem;
+.floating_Container_mini > a {
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     height: 50px;
     font-weight: 400;
 }
 
-.floating_Container > a > svg {
-    font-size: 2.3rem;
-    line-height: 1.7rem;
+.floating_Container_mini > a > svg {
+    font-size: 2rem;
+    line-height: 1.5rem;
 }
 
 
 @media screen and (max-width: 1000px) {
-    .floating_Container > a {
+    .floating_Container_mini > a {
         font-size: 1.3rem;
     }
-    .floating_Container > a > svg {
-    font-size: 1.8rem;
+    .floating_Container_mini > a > svg {
+    font-size:1.8rem;
     line-height: 1.3rem;
 }
 }
 
 
 @media screen and (max-width: 800px) {
-    .floating_Container > a > span {
+    .floating_Container_mini > a > span {
         display: none;
+    } 
+    .floating_Container_mini > a > svg {
+    font-size:2.3rem;
+     
+}
+     .floating_Container_mini {
+        height: 3.6rem;
+        width: 3.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50% !important;
     }
 }
