@@ -29,9 +29,9 @@ const GetStarted = () => {
             <p>Enjoy your Drip at our Drip Lounge or your home</p>
           </li>
         </ol>
-        <Link href="/" className="yellow">
+        <a href="#" className="yellow">
           Get Started
-        </Link>
+        </a>
       </div>
     </div>
   );

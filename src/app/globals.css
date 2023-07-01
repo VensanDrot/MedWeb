@@ -40,6 +40,11 @@ body {
 
 /* components */
 
+.parent {
+  overflow: hidden;
+  position: relative;
+}
+
 a,h1 {
     
     height: fit-content;

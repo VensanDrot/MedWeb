@@ -36,7 +36,7 @@
 .get_info_container > li {
     position: relative;
     counter-increment: my-awesome-counter;
-    width: 12%;
+    width: 14%;
     padding-bottom: 3rem !important;
 }
 
@@ -74,7 +74,7 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
    
 .get_info_container {
   

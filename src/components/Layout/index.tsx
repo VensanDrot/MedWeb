@@ -1,9 +1,11 @@
 import Nav from "../Nav";
+import FloatingButtons from "../FloatingButtons";
 const Layout = ({ children }: any) => {
   return (
-    <div>
+    <div className="parent">
       <Nav />
       <main>{children}</main>
+      <FloatingButtons />
     </div>
   );
 };

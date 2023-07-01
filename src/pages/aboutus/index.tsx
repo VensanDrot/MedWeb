@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
+import GetStarted from "@/components/GetStarted";
 
 const AboutUs = () => {
   const about_elements: { id: number; text: any }[] = [
@@ -67,6 +68,7 @@ const AboutUs = () => {
           );
         })}
       </div>
+      <GetStarted />
     </div>
   );
 };

@@ -35,3 +35,10 @@ font-weight: 600;
     row-gap: 2.4rem;
    }
 }
+
+
+@media screen and (max-width: 550px) {
+   .kid_container > p {
+    font-size: 1.5rem;
+   }
+}
