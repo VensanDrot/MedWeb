@@ -15,8 +15,8 @@
 
 
 .kid_container > p {
-    font-size: 2rem;
-    font-weight: 300;
+    font-size: 1.7rem;
+    font-weight: 200;
     
 }
 
@@ -39,6 +39,6 @@ font-weight: 600;
 
 @media screen and (max-width: 550px) {
    .kid_container > p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
    }
 }
