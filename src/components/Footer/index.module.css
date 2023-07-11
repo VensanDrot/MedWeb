@@ -1,0 +1,78 @@
+.main_footer{ 
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-color: var(--grey-bk);
+    z-index: 100;
+    color: var(--white);
+    padding: 50px 0;
+}
+
+.child_container {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.child_container > div {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+
+.child_container > div > h3 {
+    font-weight: 300;
+    font-size: 2.2rem;
+}
+
+.child_container > div > a {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    display: flex;
+    align-items: center;
+    gap: .2rem; 
+}
+
+
+.child_container > div > input,
+.child_container > div > textarea {
+    color: var(--black);
+    padding: 5px 6px;
+    border-radius: 7px;
+    resize: none;
+   
+}
+
+.child_container > div > button {
+    width: 40%;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .child_container{ 
+        width: 90%;
+    }
+    .child_container > div > input,
+    .child_container > div > textarea {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .child_container{ 
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .child_container > div {
+        width: 95%;
+    }
+    
+     
+}

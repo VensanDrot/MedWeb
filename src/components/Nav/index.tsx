@@ -89,7 +89,7 @@ const Nav = () => {
           <Link href="/" onClick={() => setOpen(!isOpen)}>
             Contact
           </Link>
-          <Link href="/" onClick={() => setOpen(!isOpen)} className="yellow">
+          <Link href="/" onClick={() => setOpen(!isOpen)} className=" yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>

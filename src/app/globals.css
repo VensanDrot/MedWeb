@@ -14,6 +14,7 @@
     --white: white;
     --black: black;
     --grey: rgb(241,239,246);
+    --grey-bk: rgb(26,26,26);
 }
 
 /* main rules */
@@ -25,6 +26,10 @@
   color: inherit;
   text-decoration: none;
   font-size: inherit;
+}
+
+h3 {
+  text-transform: uppercase;
 }
 
 .spacer {
