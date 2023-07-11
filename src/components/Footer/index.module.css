@@ -41,8 +41,9 @@
 }
 
 
-.child_container > div > input,
-.child_container > div > textarea {
+
+.child_container > div > div > input,
+.child_container > div > div > textarea {
     color: var(--black);
     padding: 5px 6px;
     border-radius: 7px;
@@ -52,6 +53,15 @@
 
 .child_container > div > button {
     width: 40%;
+}
+
+.success {
+    color: var(--green)
+}
+
+.child_container > div > div {
+    display: flex;
+    flex-direction: column;
 }
 
 
