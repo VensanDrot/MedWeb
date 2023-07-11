@@ -34,6 +34,7 @@
 .child_container > div > a {
     text-decoration: underline;
     text-underline-offset: 5px;
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: .2rem; 
