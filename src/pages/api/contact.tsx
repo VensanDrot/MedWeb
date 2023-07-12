@@ -5,10 +5,10 @@ import path from "path";
 const handlebarOptions: any = {
   viewEngine: {
     extName: ".handlebars",
-    partialsDir: path.resolve("./views"),
+    partialsDir: path.resolve("views"),
     defaultLayout: false,
   },
-  viewPath: path.resolve("./views"),
+  viewPath: path.resolve("views"),
   extName: ".handlebars",
 };
 
