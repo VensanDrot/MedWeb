@@ -24,7 +24,7 @@ const handler = async (req: any, res: any) => {
     }
     const mailOptions = {
       //...generateEmailContent(data),
-      from: process.env.NEXT_PUBLIC_EMAIL,
+      from: "mrvenchannel@gmail.com",
       to: data.email,
       subject: data.subject,
       template: "email",
