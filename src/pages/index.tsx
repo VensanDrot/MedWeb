@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 import GetStarted from "@/components/GetStarted";
+import path from "path";
 
 export default function Home() {
   return (
