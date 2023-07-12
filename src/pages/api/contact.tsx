@@ -5,10 +5,10 @@ import path from "path";
 const handlebarOptions: any = {
   viewEngine: {
     extName: ".handlebars",
-    partialsDir: path.resolve("./src/views"),
+    partialsDir: path.resolve("./views"),
     defaultLayout: false,
   },
-  viewPath: path.resolve("./src/views"),
+  viewPath: path.resolve("./views"),
   extName: ".handlebars",
 };
 
@@ -24,7 +24,7 @@ const handler = async (req: any, res: any) => {
     }
     const mailOptions = {
       //...generateEmailContent(data),
-      from: "mrvenchannel@gmail.com",
+      from: process.env.NEXT_PUBLIC_EMAIL,
       to: data.email,
       subject: data.subject,
       template: "email",
