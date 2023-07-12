@@ -40,10 +40,8 @@ const handler = async (req: any, res: any) => {
     try {
       transporter.sendMail(mailOptions);
       // Send success
-      return res.status(200).json({ success: "Success" });
+      return res.status(200).send({ success: "good" });
     } catch (error: any) {
-      // catch error
-      console.log(error);
       return res.status(400).json({ error: error.message });
     }
   }
