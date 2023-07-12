@@ -27,14 +27,7 @@ const handler = async (req: any, res: any) => {
       from: process.env.EMAIL,
       to: data.email,
       subject: data.subject,
-      template: "email",
-      context: {
-        name: data.name,
-        subject: data.subject,
-        number: data.number,
-        email: data.email,
-        message: data.message,
-      },
+      html: `<h1>hehehehe </h1>`,
     };
 
     try {
