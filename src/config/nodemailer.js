@@ -6,7 +6,7 @@ var pass = process.env.NEXT_PUBLIC_EMAIL_PASS;
 export const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "mrvenchannel@gmail.com",
-    pass: "rdustbjuwwqvmsem",
+    user: email,
+    pass: pass,
   },
 });
