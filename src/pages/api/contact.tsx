@@ -5,10 +5,10 @@ import path from "path";
 const handlebarOptions: any = {
   viewEngine: {
     extName: ".handlebars",
-    partialsDir: path.resolve("views"),
+    partialsDir: path.resolve("/views"),
     defaultLayout: false,
   },
-  viewPath: path.resolve("views"),
+  viewPath: path.resolve("/views"),
   extName: ".handlebars",
 };
 
@@ -27,14 +27,7 @@ const handler = async (req: any, res: any) => {
       from: process.env.NEXT_PUBLIC_EMAIL,
       to: data.email,
       subject: data.subject,
-      template: "email",
-      context: {
-        name: data.name,
-        subject: data.subject,
-        number: data.number,
-        email: data.email,
-        message: data.message,
-      },
+      html: `<h1>heelloo</h1>`,
     };
 
     try {
