@@ -27,6 +27,7 @@ const Footer = () => {
   // submit form
   const handleClick = async (res: any) => {
     try {
+      console.log(data);
       await sendContactForm(data);
       setDone(!done);
       setTimeout(function () {
