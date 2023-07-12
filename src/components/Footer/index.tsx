@@ -88,6 +88,7 @@ const Footer = () => {
                   event.preventDefault();
                 }
               }}
+              minLength={9}
               maxLength={10}
               onChange={(e) => handleChange(e)}
             />
