@@ -81,3 +81,22 @@ section {
     color: var(--white) !important;
 }
 
+.naming {
+   color: var(--aqua);
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
+.top_img {
+    background-image: url("../img/faq.png");
+    min-height: 85vh; 
+    background-size: cover;
+    background-position: center bottom;
+}
+
+@media screen and (max-width: 600px) {
+  .top_img {
+    background-position: calc(100%-10%);
+   }
+  
+}

@@ -7,7 +7,7 @@ const Layout = ({ children }: any) => {
     <div className="parent">
       <Nav />
       <main>{children}</main>
-      <FloatingButtons />
+      {/*<FloatingButtons /> */}
       <Footer />
     </div>
   );

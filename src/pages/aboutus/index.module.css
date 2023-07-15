@@ -1,6 +1,4 @@
-.AboutUs_container {
-    margin-top: 100px;
-}
+
 
 .about_container {
     padding-top: 1.5rem;
@@ -25,9 +23,12 @@ content: "- ";
 font-weight: 600;
 }
 
+ 
+
 .kid_container > p > b {
     color: var(--aqua);
 }
+
 
 
 @media screen and (max-width: 700px) {
@@ -41,4 +42,5 @@ font-weight: 600;
    .kid_container > p {
     font-size: 1.4rem;
    }
+   
 }

@@ -23,7 +23,7 @@
 }
 
 .answer_container > h1 {
-    
+    text-transform: uppercase;
     cursor: pointer;
     position: relative;
     white-space: pre-wrap;
