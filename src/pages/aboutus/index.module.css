@@ -12,6 +12,12 @@
 }
 
 
+.about_img {
+    background: url("../../img/aboutus.png");
+    height: 89vh;
+    background-position: center;
+}
+
 .kid_container > p {
     font-size: 1.7rem;
     font-weight: 200;
@@ -41,6 +47,10 @@ font-weight: 600;
 @media screen and (max-width: 550px) {
    .kid_container > p {
     font-size: 1.4rem;
+   }
+
+   .about_img {
+    background-position: right -400px bottom -10px !important;
    }
    
 }

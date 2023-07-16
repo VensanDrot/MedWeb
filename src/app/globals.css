@@ -102,13 +102,16 @@ section {
 
 .top_img {
     background-image: url("../img/faq.png");
+    width: 100vw;
     min-height: 85vh; 
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover !important;
     background-position: center bottom;
 }
 
 @media screen and (max-width: 600px) {
   .top_img {
+    height: 75vh !important;
     background-position: calc(100%-10%);
    }
   

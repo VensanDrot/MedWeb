@@ -33,7 +33,7 @@ const Nav = () => {
     >
       <div className={styles.nav_box}>
         <Link href="/" className={styles.nav_img_con}>
-          <Image src={img} alt="Chilling" className={styles.nav_img} />
+          <Image src={img} alt="Chilling" className={styles.nav_img} height={95} />
         </Link>
 
         <div className={styles.Hamburger_container}>
