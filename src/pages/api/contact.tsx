@@ -1,6 +1,5 @@
 import { transporter } from "../../config/nodemailer";
 import hbs from "nodemailer-express-handlebars";
-import fs from "fs";
 import path from "path";
 import { NextApiRequest, NextApiResponse } from "next";
 
