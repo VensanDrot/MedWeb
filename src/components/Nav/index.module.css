@@ -9,6 +9,7 @@
     color: var(--black);
     transition:  var(--transition);
     background-color: rgba(255, 255, 255, 0.6);
+    z-index: 10000;
 
 }
 
@@ -93,6 +94,7 @@
 
 .nav_container_mobile  .tooltip{ 
     display: none !important;
+    
 }
 
 /* socials */
