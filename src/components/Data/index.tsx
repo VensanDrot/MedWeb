@@ -1,4 +1,4 @@
-export const FAQPageData: { id: number; question: string; answer: any }[] = [
+export const FAQPageData: { id: number; question: string; answer: React.ReactElement }[] = [
   {
     id: 1,
     question: "How do your hydration infusion services help me?",
@@ -50,6 +50,9 @@ export const FAQPageData: { id: number; question: string; answer: any }[] = [
     ),
   },
   // Vitamins
+];
+
+export const VitaminBenefits: { id: number; question: string; answer: React.ReactElement }[] = [
   {
     id: 6,
     question: "Vitamin C ",
@@ -154,7 +157,9 @@ export const FAQPageData: { id: number; question: string; answer: any }[] = [
   },
 ];
 
-export const AboutData = [
+// Abous US Page
+
+export const AboutData: { id: number; text: React.ReactElement }[] = [
   {
     id: 1,
     text: (

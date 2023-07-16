@@ -2,13 +2,12 @@ import React, { useState, useRef } from "react";
 import styles from "./index.module.css";
 import GetStarted from "@/components/GetStarted";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { Rotate } from "hamburger-react";
-import { FAQPageData } from "@/components/Data";
+import { FAQPageData, VitaminBenefits } from "@/components/Data";
 
 interface DivInterface {
   id: number;
   question: string;
-  answer: any;
+  answer: React.ReactElement;
 }
 
 const QAPage = () => {
@@ -56,14 +55,10 @@ const QAPage = () => {
       <div className={styles.qa_container}>
         <h1 className="naming">FAQ Page</h1>
         {FAQPageData.map((e) => {
-          if (e.id === 6) {
-            return (
-              <>
-                <h1 className="naming">VITAMIN BENEFITS</h1>
-                {DivElement(e)}
-              </>
-            );
-          }
+          return DivElement(e);
+        })}
+        <h1 className="naming">Vitamins Benefits</h1>
+        {VitaminBenefits.map((e) => {
           return DivElement(e);
         })}
       </div>

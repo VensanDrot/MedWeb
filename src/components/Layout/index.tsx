@@ -2,7 +2,11 @@ import Nav from "../Nav";
 import FloatingButtons from "../FloatingButtons";
 import Footer from "../Footer";
 
-const Layout = ({ children }: any) => {
+type PropsType = {
+  children: React.ReactElement;
+};
+
+const Layout = ({ children }: PropsType) => {
   return (
     <div className="parent">
       <Nav />

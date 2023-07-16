@@ -5,7 +5,7 @@
     background-color: var(--grey-bk);
     z-index: 100;
     color: var(--white);
-    padding: 50px 0;
+    padding: 50px 0 70px 0; 
 }
 
 .child_container {
@@ -16,7 +16,8 @@
     justify-content: space-evenly;
 }
 
-.child_container > div {
+.child_container > div,
+.child_container > form {
     width: 50%;
     padding: 10px;
     display: flex;
@@ -42,8 +43,8 @@
 
 
 
-.child_container > div > div > input,
-.child_container > div > div > textarea {
+.child_container > form > div > input,
+.child_container > form > div > textarea {
     color: var(--black);
     padding: 5px 6px;
     border-radius: 7px;
@@ -51,7 +52,7 @@
    
 }
 
-.child_container > div > button {
+.child_container > form > button {
     width: 40%;
 }
 
@@ -59,7 +60,7 @@
     color: var(--green)
 }
 
-.child_container > div > div {
+.child_container > form > div {
     display: flex;
     flex-direction: column;
 }
@@ -69,8 +70,8 @@
     .child_container{ 
         width: 90%;
     }
-    .child_container > div > input,
-    .child_container > div > textarea {
+    .child_container > form  > div > input,
+    .child_container > form  > div > textarea {
         width: 100%;
     }
 }
@@ -81,7 +82,8 @@
         flex-direction: column;
         align-items: center;
     }
-    .child_container > div {
+    .child_container > div,
+    .child_container > form {
         width: 95%;
     }
     
