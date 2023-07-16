@@ -37,8 +37,7 @@
 
 .nav_img {
     position: absolute;
-    left: 0;
-    height: 95px;
+    left: 5px; 
     width: auto;
 }
 
@@ -66,7 +65,7 @@
     display: none;
     position: absolute;
     height: 100%;
-    right: 10px;
+    right: 0;
 }
 
 .nav_link_mobile{
