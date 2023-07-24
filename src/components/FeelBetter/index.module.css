@@ -1,0 +1,59 @@
+.FB_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 3rem 0;
+    width: 100%;
+    position: relative;
+}
+
+.FB_content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.35rem;
+    width: 65%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.FB_content > h1 {
+    color: var(--aqua);
+}
+
+.FB_content > p {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.FB_content > a {
+    font-size: 1.4rem;
+  
+}
+ 
+@media screen and (max-width: 600px) {
+    .FB_content > h1 {
+        font-size: 2.2rem;
+    }
+    .FB_content > p {
+        font-size: 1rem;
+    }
+    .FB_content > a {
+        font-size: 1.3rem;
+        padding: .7rem 1rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .FB_content > h1 {
+        font-size: 1.8rem;
+    }
+    .FB_content > p {
+        font-size: 1rem;
+    }
+    .FB_content > a {
+        font-size: 1.3rem;
+        
+    }
+}

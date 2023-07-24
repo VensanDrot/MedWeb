@@ -1,90 +1,71 @@
 .get_container {
     position: relative;
+    min-height: 45vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%; 
     padding: 3rem 0;
     background:var(--grey);
+   
     }
-
-.get_container > a {
-    font-size: 1.6rem;
-  
-}
-
-.get_container > h1{
-    font-weight: 400;
-    color: var(--aqua);
-    text-align: center;
-}
-
-.get_info_container {
-    width: 90vw;
-    counter-reset: my-awesome-counter;
-    padding-left: 0;
-    list-style: none;
-    margin: 3rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    position: relative;
-    gap: 3rem;
-}
-
-.get_info_container > li {
-    position: relative;
-    counter-increment: my-awesome-counter;
-    width: 14%;
-    padding-bottom: 3rem !important;
-}
-
-
-.get_info_container > li > p {
-    width: 100%;
-    height: 100%;
-    font-weight: 300;
-    font-size: 1.2rem;
-    overflow: hidden;
-    white-space: pre-wrap;
-}
-
-.get_info_container > li > p::before {
-     content: counter(my-awesome-counter) ". ";
-     
-}
-
-.get_info_container > li > svg {
-    color: var(--aqua);
-    padding: 10px;
-    border: 10px solid var(--aqua);
-    border-radius: 50%;
-    font-size: 7rem; 
-
-}
-
-@media screen and (max-width: 1100px) {
-   
     
-.get_info_container > li {
-    width: 20%;
-}
-   
-}
-
-
-@media screen and (max-width: 750px) {
-   
-.get_info_container {
-  
+.get_started {
+    display: flex;
+    width: 70%;
     flex-direction: column;
+    row-gap: 1.2rem;
+    text-align: center;
     align-items: center;
-    row-gap: 0;
 }
 
-.get_info_container > li {
-      width: 70%;
-}   
+.get_started > h1,
+.get_started > h4 {
+   white-space: pre-wrap;
+   word-wrap: normal;
+}
 
+.get_started > h1 {
+    margin-top: 1rem;
+    color: var(--aqua);
+}
+
+.get_started > h4 { 
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+}
+
+.get_started > a {
+    width: 300px;
+    font-size: 1.5rem;
+}
+
+.get_started > p { 
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .get_started > h1 {
+        font-size: 2.2rem;
+    }
+    .get_started > p {
+        font-size: 1rem;
+    }
+    .get_started > a {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .get_started > h1 {
+        font-size: 1.8rem;
+    }
+    .get_started > p {
+        font-size: 1rem;
+    }
+    .get_started > a {
+        font-size: 1.3rem;
+        width: 200px;
+    }
 }

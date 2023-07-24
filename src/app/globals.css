@@ -15,6 +15,7 @@
     --black: black;
     --grey: rgb(241,239,246);
     --grey-bk: rgb(26,26,26);
+    --navy: #0A1A37;
 }
 
 /* main rules */
@@ -98,6 +99,10 @@ section {
    color: var(--aqua);
    text-transform: uppercase;
    font-weight: 500;
+}
+
+.naming_b {
+  color: var(--navy);
 }
 
 .top_img {

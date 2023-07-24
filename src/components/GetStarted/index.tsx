@@ -8,29 +8,13 @@ import { AiOutlineHome } from "react-icons/ai";
 
 const GetStarted = () => {
   return (
-    <div className={styles.get_main_container}>
-      <div className={styles.get_container}>
-        <h1>Get Started</h1>
-        <ol className={styles.get_info_container}>
-          <li>
-            <MdWaterDrop />
-            <p>Select a Drip just right for your body and mind</p>
-          </li>
-          <li>
-            <BiCalendar />
-            <p>Schedule your Drippin’ appointment</p>
-          </li>
-          <li>
-            <GiPlagueDoctorProfile />
-            <p>Receive our practitioner’s medical clearance and we will match a nurse to you</p>
-          </li>
-          <li>
-            <AiOutlineHome />
-            <p>Enjoy your Drip at our Drip Lounge or your home</p>
-          </li>
-        </ol>
-        <a href="#" className="yellow">
-          Get Started
+    <div className={styles.get_container}>
+      <div className={styles.get_started}>
+        <h4>MOBILE IV THERAPY</h4>
+        <h1>HydratioNation IV Comes To You</h1>
+        <p>Bring any IV to your home, office, or event.</p>
+        <a href="" className="yellow">
+          Get Started
         </a>
       </div>
     </div>

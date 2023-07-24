@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 import GetStarted from "@/components/GetStarted";
-import path from "path";
+import FeelBetter from "@/components/FeelBetter";
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <FeelBetter />
       <GetStarted />
     </div>
   );

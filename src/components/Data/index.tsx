@@ -38,18 +38,6 @@ export const FAQPageData: { id: number; question: string; answer: React.ReactEle
       </p>
     ),
   },
-  {
-    id: 5,
-    question: "How often should I get an IV infusion?",
-    answer: (
-      <p>
-        Treatment frequency varies based on 2 main factors: metabolism and activity level. The quicker your metabolism
-        and more active lifestyle you live, the faster you will burn through the benefits of your vitamin and nutrient
-        boost. Infusions every 1-2 weeks are reasonable and safe depending on your lifestyle.
-      </p>
-    ),
-  },
-  // Vitamins
 ];
 
 export const VitaminBenefits: { id: number; question: string; answer: React.ReactElement }[] = [
@@ -64,12 +52,50 @@ export const VitaminBenefits: { id: number; question: string; answer: React.Reac
     ),
   },
   {
+    id: 16,
+    question: "NAD+",
+    answer: (
+      <p>
+        <b>NAD+</b> is a powerful anti-aging coenzyme and gives you an amazing boost of energy. NAD+ aids in metabolism
+        which helps with weight loss.
+      </p>
+    ),
+  },
+  {
     id: 7,
     question: "Zinc",
     answer: (
       <p>
         <b>Zinc </b> is important for the immune system and hormone balance in your body. Zinc also helps control blood
         sugar and promotes a healthy cardiovascular system.
+      </p>
+    ),
+  },
+  {
+    id: 17,
+    question: "Glutathione",
+    answer: (
+      <p>
+        <b>Glutathione</b> is important for liver detoxification, immune enhancement, and is a powerful antioxidant.
+      </p>
+    ),
+  },
+  {
+    id: 18,
+    question: "ALA",
+    answer: (
+      <p>
+        <b>ALA </b>is an antioxidant and anti-aging compound. ALA is useful in increasing weight loss and decreasing the
+        rate of memory loss. ALA improves skin quality and reduces inflammation.
+      </p>
+    ),
+  },
+  {
+    id: 19,
+    question: "Ketorolac (Toradol)",
+    answer: (
+      <p>
+        <b>Ketorolac (Toradol) </b>can control pain and inflammation and is highly effective in treating migraines.
       </p>
     ),
   },

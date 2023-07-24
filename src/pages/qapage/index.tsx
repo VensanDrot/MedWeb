@@ -53,11 +53,11 @@ const QAPage = () => {
     <div className={`${styles.qa_main_container} `}>
       <div className="top_img"></div>
       <div className={styles.qa_container}>
-        <h1 className="naming">FAQ Page</h1>
+        <h1 className="naming naming_b">FAQ Page</h1>
         {FAQPageData.map((e) => {
           return DivElement(e);
         })}
-        <h1 className="naming">Vitamins Benefits</h1>
+        <h1 className="naming naming_b">Vitamins Benefits</h1>
         {VitaminBenefits.map((e) => {
           return DivElement(e);
         })}
