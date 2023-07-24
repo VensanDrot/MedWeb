@@ -77,7 +77,13 @@ const Footer = () => {
           }}
         >
           <h3>Get In Touch</h3>
-          {!active ? <h4 className={`${result !== "Success" ? "error" : ""}  ${styles.success}`}>{result}</h4> : ""}
+          {!active ? (
+            <h4 className={`${result !== "Message was sent successfully" ? "error" : ""}  ${styles.success}`}>
+              {result}
+            </h4>
+          ) : (
+            ""
+          )}
           <div>
             <label>Name: </label>
             <input type="text" name="name" placeholder="name" value={data.name} onChange={(e) => handleChange(e)} />
