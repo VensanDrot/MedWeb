@@ -19,6 +19,7 @@ const Services = () => {
   const card = (e: DivInterface) => {
     return (
       <div key={e.id} className={styles.element}>
+        <Image src={e.icon ? icon1 : icon2} height={60} alt="icon" />
         <div className={styles.element_des}>
           <div className={styles.element_block}>
             <div className={styles.name_price}>
