@@ -19,14 +19,13 @@ const Services = () => {
   const card = (e: DivInterface) => {
     return (
       <div key={e.id} className={styles.element}>
-        <Image src={e.icon ? icon1 : icon2} height={60} alt="icon" />
         <div className={styles.element_des}>
           <div className={styles.element_block}>
             <div className={styles.name_price}>
               <h1>{e.name}</h1>
               <hr />
               <p>
-                <b>{e.price}</b>
+                <b>${e.price}</b>
               </p>
             </div>
           </div>
@@ -85,7 +84,7 @@ const Services = () => {
                 return card(e);
               })}
             </div>
-
+            {/* */}
             <div className={styles.menu_container}>
               <div className={styles.menu_top}>
                 <h1>Recovery Hydration Packs </h1>
@@ -94,6 +93,7 @@ const Services = () => {
                 return card(e);
               })}
             </div>
+            {/* */}
           </div>
         </div>
       </div>
