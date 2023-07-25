@@ -175,6 +175,11 @@
 }
 
 @media screen and (max-width: 1000px) {
+     
+    .services_content {
+        width: 95%;
+    }
+
     .content_top_part {
         flex-direction: column;
         row-gap: 2rem;
@@ -188,7 +193,22 @@
     }
     .top_part_text_2 > div > h3 {
     margin-bottom: 10px;
-}
+    }
+    .services_menu_content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu_container {
+        width: 95%;
+    }
+    .element > img {
+        width: 30px !important;
+        height: 40px !important;
+    }
+    .element_des {
+        width: calc(100%-45px);
+    }
 }
 
 @media screen and (max-width: 600px) {
