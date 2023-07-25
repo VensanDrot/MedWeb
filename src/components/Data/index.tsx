@@ -239,3 +239,114 @@ export const AboutData: { id: number; text: React.ReactElement }[] = [
     ),
   },
 ];
+
+export const WellnessHydrationPacks = [
+  {
+    id: 1,
+    icon: true,
+    name: "Energy Booster",
+    price: "250",
+    description: "Feel energized and alert from this strong blast of fortifying nutrients.",
+  },
+  {
+    id: 2,
+    icon: true,
+    name: "Immune Booster",
+    price: "250",
+    description: "Protect your immune system and prevent sickness no matter the season.",
+  },
+  {
+    id: 3,
+    icon: true,
+    name: "Myers Cocktail",
+    price: "250",
+    description: "Encourage heightened immune function, energy levels and overall wellness.",
+  },
+  {
+    id: 4,
+    icon: true,
+    name: "Beauty Glow Up",
+    price: "250",
+    description: "Get glowing skin and hair by thoroughly hydrating from the inside out.",
+  },
+  {
+    id: 5,
+    icon: true,
+    name: "Anxiety Reducer",
+    price: "250",
+    description: "Improve your mood, relieve stress, and ease muscle tension.",
+  },
+  {
+    id: 6,
+    icon: true,
+    name: "Detox Cleanser",
+    price: "250",
+    description: "Deeply cleanse and reset with vital antioxidants for optimum health.",
+  },
+  {
+    id: 7,
+    icon: true,
+    name: "Weight Loss Melter",
+    price: "250",
+    description: "Increase your metabolism and natural fat breakdown.",
+  },
+  {
+    id: 8,
+    icon: true,
+    name: "Acne Buster",
+    price: "250",
+    description: "Reduce acne flare ups with the power of Vitamin D for clearer skin and an all-natural glow.",
+  },
+];
+
+export const RecoveryHydrationPacks = [
+  {
+    id: 1,
+    icon: false,
+    name: "Jet Lag Blaster",
+    price: "250",
+    description: "Alleviate travel fatigue, dehydration, and discomfort.",
+  },
+  {
+    id: 2,
+    icon: false,
+    name: "Cold & Flu Relief",
+    price: "250",
+    description: "Ease cold and flu symptoms and associated achiness.",
+  },
+  {
+    id: 3,
+    icon: false,
+    name: "Migraine Relief",
+    price: "250",
+    description: "Relieve and recover from debilitating migraine pain, nausea, and sensory sensitivities.",
+  },
+  {
+    id: 4,
+    icon: false,
+    name: "Hangover Recovery",
+    price: "250",
+    description: "Banish dehydration, brain fog, and nausea– and keep your liver happy and healthy.",
+  },
+  {
+    id: 5,
+    icon: false,
+    name: "Fitness Recovery",
+    price: "250",
+    description: "Enhance your overall athletic performance and improve muscle recovery.",
+  },
+  {
+    id: 6,
+    icon: false,
+    name: "Food Poisoning Relief",
+    price: "250",
+    description: "Rehydrate your body and flush out the poisonous source.",
+  },
+  {
+    id: 7,
+    icon: false,
+    name: "Prenatal Relief",
+    price: "250",
+    description: "Safely rehydrate and energize, ease morning sickness and pregnancy fatigue.",
+  },
+];

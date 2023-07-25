@@ -46,7 +46,7 @@ const Nav = () => {
           <Link href="/qapage">FAQ Page</Link>
           <Link href="/aboutus">About us</Link>
           <Link href="/Contact">Contact</Link>
-          <Link href="/BookAppointment" className="yellow">
+          <Link href="/services" className="yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>
@@ -89,7 +89,7 @@ const Nav = () => {
           <Link href="/Contact" onClick={() => setOpen(!isOpen)}>
             Contact
           </Link>
-          <Link href="/BookAppointment" onClick={() => setOpen(!isOpen)} className=" yellow">
+          <Link href="/services" onClick={() => setOpen(!isOpen)} className=" yellow">
             BOOK AN APPOINTMENT
           </Link>
           <div className={styles.socials_container}>

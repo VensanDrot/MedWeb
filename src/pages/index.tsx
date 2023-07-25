@@ -8,7 +8,9 @@ export default function Home() {
     <div>
       <section className={styles.main_section}>
         <div className={styles.main_text_box}>
-          <h1>Wellness, Infused</h1>
+          <h1>
+            Wellness, <em>Infused</em>
+          </h1>
           <p>
             At HydratioNation IV, our customized IV vitamin infusions deeply nourish and replenish for immediate
             results.
