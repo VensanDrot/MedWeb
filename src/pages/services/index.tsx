@@ -26,7 +26,7 @@ const Services = () => {
               <h1>{e.name}</h1>
               <hr />
               <p>
-                <b>${e.price}</b>
+                <b>{e.price}</b>
               </p>
             </div>
           </div>
@@ -76,6 +76,25 @@ const Services = () => {
             </div>
           </div>
           {/* Services part */}
+          <div className={styles.services_menu_content}>
+            <div className={styles.menu_container}>
+              <div className={styles.menu_top}>
+                <h1>Wellness Hydration Packs</h1>
+              </div>
+              {WellnessHydrationPacks.map((e) => {
+                return card(e);
+              })}
+            </div>
+
+            <div className={styles.menu_container}>
+              <div className={styles.menu_top}>
+                <h1>Recovery Hydration Packs </h1>
+              </div>
+              {RecoveryHydrationPacks.map((e) => {
+                return card(e);
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>
