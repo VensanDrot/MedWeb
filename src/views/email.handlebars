@@ -27,28 +27,34 @@
 
     }
 
-    .two-columns .column {
+    @media screen and (max-width: 2000px) {
 
-      max-width: 300px;
-      display: inline-block;
-      vertical-align: top;
-      text-align: center;
-    }
+      .two-columns .column {
 
-    .tds {
-      background-image: url(https://www.symmetria.com/media/znrlw1mk/symmetria-iv-drips.jpg) !important;
-      background-position: center;
-      background-size: cover;
-      height: 400px !important;
-      display: block;
-      text-align: center;
-      padding-top: 30px;
-    }
+        max-width: 300px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+      }
+
+      .tds {
+        background-image: url('https://www.symmetria.com/media/znrlw1mk/symmetria-iv-drips.jpg') !important;
+        background-position: center;
+        background-size: cover;
+        height: 400px !important;
+        display: block;
+        text-align: center;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
 
-    .p_message {
-      font-size: 1.2rem;
-      font-weight: 200;
+      .p_message {
+        font-size: 1.2rem;
+        font-weight: 200;
+      }
     }
   </style>
 </head>
@@ -75,9 +81,9 @@
 
 
       <tr>
-        <td>
-          <a href="https://med-web-navy.vercel.app/">
-            <img src="https://imgtr.ee/images/2023/07/23/88c295cdfa0d3392c794d569b6559b16.png" width="200px">
+        <td style="padding: 14px 0 4px; text-align: center;">
+          <a href="https://med-web-navy.vercel.app/" style="height: 70px; display: block;">
+            <img src="https://i.ibb.co/ZBc7z46/logo.png" style="width: 200px !important;">
           </a>
         </td>
       </tr>
@@ -86,11 +92,11 @@
 
       <!-- 
         banner
-      -->
+   
 
       <tr>
         <td style="
-      background-image: url(https://www.symmetria.com/media/znrlw1mk/symmetria-iv-drips.jpg) !important;
+      background-image: url('https://www.symmetria.com/media/znrlw1mk/symmetria-iv-drips.jpg') !important;
       background-position: center;
       background-size: cover;
       height: 400px !important;
@@ -100,6 +106,7 @@
 
           <h1 style="      
           width: 100%;
+          text-align: center;
           font-size: 2.3rem;">
             HydratioNation</h1>
           <p style="
@@ -119,12 +126,11 @@
       font-size: 30px;
       text-decoration: none;
       background-color: #1592A8;
-      color: white !important;
-      " href="https://med-web-navy.vercel.app/">Get Started</a>
+      color: white !important;" href="https://med-web-navy.vercel.app/" target="_blank">Get Started</a>
 
         </td>
       </tr>
-
+  -->
 
       <tr>
         <td style="padding: 10px;">
@@ -135,7 +141,21 @@
         </td>
       </tr>
 
+
+      <tr>
+        <td style="padding: 14px 0 14px; text-align: center;">
+          <a href="https://med-web-navy.vercel.app/" style="height: 70px; display: block;">
+            <img src="https://i.ibb.co/ZBc7z46/logo.png" style="width: 200px !important;">
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td height="15" style="background-color: #ccc;"></td>
+      </tr>
+
     </table>
+
   </center>
 
 </body>
