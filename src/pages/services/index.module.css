@@ -8,11 +8,13 @@
 }
 
 .img_container {
-    height: 80vh !important;
+    height: 70vh !important;
+
 }
 
 .image_main {
     object-fit: cover;
+    object-position: top;
     width: 100%;
     height: 100%;
 }

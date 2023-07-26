@@ -8,3 +8,7 @@ export const sendContactForm = async (data: any) => {
     },
   });
 };
+
+export const sendDateRequest = async () => {
+  return await fetch("/api/getDates");
+};

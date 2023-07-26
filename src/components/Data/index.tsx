@@ -350,3 +350,9 @@ export const RecoveryHydrationPacks = [
     description: "Safely rehydrate and energize, ease morning sickness and pregnancy fatigue.",
   },
 ];
+
+export const WorkTime = {
+  Open: 9,
+  Close: 18,
+  interval: 1,
+};
