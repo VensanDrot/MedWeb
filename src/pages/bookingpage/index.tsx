@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+/*  
 import Calendar from "react-calendar";
 import styles from "./index.module.css";
 import add from "date-fns/add";
@@ -32,8 +33,9 @@ interface lockedDates {
   date: string;
   time: string;
 }
-
+*/
 const BookingPage = () => {
+  /** 
   const [lockedDates, setLockedDates] = useState<lockedDates[]>();
   const [data, setData] = useState<DateTime>({
     justDate: null,
@@ -135,8 +137,11 @@ const BookingPage = () => {
       console.log(err);
     }
   };
-
+*/
   return (
+    <>
+      hehe
+      {/** 
     <div className={styles.main}>
       <div className={styles.product_container}>
         <Image src={icon === "true" ? icon1 : icon2} alt="Icon" />
@@ -235,7 +240,8 @@ const BookingPage = () => {
           Confirm booking
         </button>
       </form>
-    </div>
+    </div>*/}
+    </>
   );
 };
 
