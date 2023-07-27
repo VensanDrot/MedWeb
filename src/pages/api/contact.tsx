@@ -49,7 +49,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         from: process.env.NEXT_PUBLIC_EMAIL,
         to: process.env.NEXT_PUBLIC_EMAIL,
         subject: data.subject,
-        ...mailOptions,
+        ...mailOptions1,
       });
 
       await transporter.sendMail({
