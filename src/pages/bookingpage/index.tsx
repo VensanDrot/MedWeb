@@ -95,7 +95,7 @@ const BookingPage = () => {
     setCustomer((prev) => ({ ...prev, justDate: finish }));
     setData((prev) => ({ ...prev, justDate: date }));
   };
-  /***/
+
   //check if time
   const CheckIfAvailable = (time: Date) => {
     let res = false;
@@ -149,7 +149,13 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
-      <form action="" className={styles.main_block}>
+      <form
+        action=""
+        onSubmit={(e) => {
+          sendHandler(e);
+        }}
+        className={styles.main_block}
+      >
         <div className={styles.input_container}>
           <label htmlFor="input">Name:</label>
           <input
