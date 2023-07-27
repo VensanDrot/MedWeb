@@ -58,9 +58,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     };
 
-    await shareWithUs(data);
-
     try {
+      await shareWithUs(data);
       await transporter
         .sendMail({
           from: process.env.NEXT_PUBLIC_EMAIL,
