@@ -92,10 +92,11 @@ const BookingPage = () => {
   const HandleDate = (date: Date) => {
     let finish = format(date, "yyyy-MMMM-dd");
     getInfo(finish);
+    console.log(getInfo(finish));
     setCustomer((prev) => ({ ...prev, justDate: finish }));
     setData((prev) => ({ ...prev, justDate: date }));
   };
-
+  /**
   //check if time
   const CheckIfAvailable = (time: Date) => {
     let res = false;
@@ -135,7 +136,7 @@ const BookingPage = () => {
       console.log(err);
     }
   };
-
+*/
   return (
     <div className={styles.main}>
       <div className={styles.product_container}>
@@ -149,13 +150,7 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
-      <form
-        action=""
-        onSubmit={(e) => {
-          sendHandler(e);
-        }}
-        className={styles.main_block}
-      >
+      <form action="" className={styles.main_block}>
         <div className={styles.input_container}>
           <label htmlFor="input">Name:</label>
           <input
@@ -215,7 +210,7 @@ const BookingPage = () => {
               <div className={styles.date_buttons} key={`time-${i}`}>
                 <button
                   type="button"
-                  className={`${CheckIfAvailable(time) ? "disabled" : ""} yellow  ${checkifActive(i)} `}
+                  className={`{CheckIfAvailable(time) ? "disabled" : ""} yellow  {checkifActive(i)} `}
                   onClick={() => {
                     let ftime = format(time, "kk:mm");
                     setCustomer((prev) => ({ ...prev, dateTime: ftime }));

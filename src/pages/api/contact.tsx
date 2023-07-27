@@ -59,7 +59,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         ...mailOptions,
       });
 
-      return res.json({ message: "Success" });
+      return res.json({ message: "Message was sent successfully" });
     } catch (error: any) {
       return res.json({ message: error.message });
     }
