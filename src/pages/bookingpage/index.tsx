@@ -212,7 +212,7 @@ const BookingPage = () => {
           }}
           value={data.justDate}
         />
-        {data.justDate ? (
+        {data.justDate && lockedDates ? (
           <div className={styles.time_box}>
             {times?.map((time, i) => (
               <div className={styles.date_buttons} key={`time-${i}`}>
