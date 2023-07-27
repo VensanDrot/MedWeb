@@ -102,7 +102,7 @@ const BookingPage = () => {
 
   /*check if time*/
   const CheckIfAvailable = (time: Date) => {
-    /**/ let res = false;
+    /* let res = false;
     if (lockedDates) {
       lockedDates.map((e) => {
         if (e.time == format(time, "kk:mm")) {
@@ -110,7 +110,7 @@ const BookingPage = () => {
         }
       });
     }
-    return res;
+    return res;*/
   };
 
   const checkifActive = (i: number) => {
