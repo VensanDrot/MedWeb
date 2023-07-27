@@ -95,7 +95,7 @@ const BookingPage = () => {
     setCustomer((prev) => ({ ...prev, justDate: finish }));
     setData((prev) => ({ ...prev, justDate: date }));
   };
-  /***/
+  /*
   //check if time
   const CheckIfAvailable = (time: Date) => {
     let res = false;
@@ -135,7 +135,7 @@ const BookingPage = () => {
       console.log(err);
     }
   };
-
+**/
   return (
     <div className={styles.main}>
       <div className={styles.product_container}>
@@ -209,7 +209,7 @@ const BookingPage = () => {
               <div className={styles.date_buttons} key={`time-${i}`}>
                 <button
                   type="button"
-                  className={`${CheckIfAvailable(time) ? "disabled" : ""} yellow  ${checkifActive(i)} `}
+                  className={`{CheckIfAvailable(time) ? "disabled" : ""} yellow  {checkifActive(i)} `}
                   onClick={() => {
                     let ftime = format(time, "kk:mm");
                     setCustomer((prev) => ({ ...prev, dateTime: ftime }));
