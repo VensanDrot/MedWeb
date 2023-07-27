@@ -57,7 +57,7 @@
 }
 
 .time_box {
-  width: 50%;
+  width: 80%;
   display: grid;
   justify-items: center;
   grid-template-rows: 1fr 1fr 1fr;
@@ -99,3 +99,52 @@
   color: white  ;
 }
 
+
+@media screen and (min-width: 1200px) {
+  .time_box {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .product_container{ 
+    width: 90%;
+  }
+
+  .product_description {
+    width: 70%;
+  }
+
+  .product_description > h1{ 
+    font-size: 2.2rem;
+  }
+  .product_description > div > h3{ 
+    font-size: 1.4rem;
+  }
+  .product_description > div > p{ 
+    font-size: 1.3rem;
+  }
+
+  .product_container > img {
+  width: 100px;
+  height: 300px;
+}
+
+.input_container {
+  width: 100%;
+}
+
+.input_container > input {
+   width: 100%;
+}
+
+.main_block {
+  width: 90%;
+}
+
+.time_box {
+  width: 100%;
+}
+  
+}

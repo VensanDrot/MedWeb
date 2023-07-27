@@ -10,6 +10,7 @@ import { useSearchParams } from "next/navigation";
 import { getBookingInfo } from "@/lib/api";
 import icon1 from "../../img/IVTherapyHydrationServices.svg";
 import icon2 from "../../img/InjectionTherapyHydrationServices.svg";
+import icon3 from "../../img/Spin.svg";
 
 interface DateTime {
   justDate: Date | null;
@@ -34,6 +35,7 @@ interface lockedDates {
 }
 
 const BookingPage = () => {
+  //variables
   const [lockedDates, setLockedDates] = useState<lockedDates[]>();
   const [data, setData] = useState<DateTime>({
     justDate: null,
@@ -49,6 +51,7 @@ const BookingPage = () => {
     dateTime: "",
   });
 
+  // queries for data on the page
   const searchParams = useSearchParams();
   const product = searchParams?.get("product");
   const description = searchParams?.get("description");
@@ -56,6 +59,7 @@ const BookingPage = () => {
   const price = searchParams?.get("price");
   const type = searchParams?.get("type");
 
+  //handling calendar data
   const getTimes = () => {
     if (!data.justDate) return;
 
@@ -96,12 +100,20 @@ const BookingPage = () => {
     setData((prev) => ({ ...prev, justDate: date }));
   };
 
-  //check if time
+  //check if time is free and if it's not expired
   const CheckIfAvailable = (time: Date) => {
+    const now = new Date();
+    let hoursPassed = now.getHours() + " " + now.getMinutes();
+
     let res = false;
     if (lockedDates?.length !== 0 && lockedDates) {
       lockedDates.map((e) => {
         if (e.time == format(time, "kk:mm")) {
+          res = true;
+        } else if (
+          format(time, "yyyy-MMMM-dd") === format(now, "yyyy-MMMM-dd") &&
+          format(time, "kk:mm") <= hoursPassed
+        ) {
           res = true;
         }
       });
@@ -109,6 +121,7 @@ const BookingPage = () => {
     return res;
   };
 
+  // check if time is active
   const checkifActive = (i: number) => {
     if (i === active) {
       return "active";
@@ -118,7 +131,6 @@ const BookingPage = () => {
   };
 
   //form send handler
-
   const sendHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -140,6 +152,7 @@ const BookingPage = () => {
 
   return (
     <div className={styles.main}>
+      {/* Product description */}
       <div className={styles.product_container}>
         <Image src={icon === "true" ? icon1 : icon2} alt="Icon" />
         <div className={styles.product_description}>
@@ -151,6 +164,7 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
+
       <form
         action=""
         onSubmit={(e) => {
@@ -158,6 +172,7 @@ const BookingPage = () => {
         }}
         className={styles.main_block}
       >
+        {/* Customer data inputs */}
         <div className={styles.input_container}>
           <label htmlFor="input">Name:</label>
           <input
@@ -201,6 +216,9 @@ const BookingPage = () => {
             required
           />
         </div>
+
+        {/* Chosing date */}
+
         <Calendar
           minDate={new Date()}
           view="month"
@@ -211,6 +229,8 @@ const BookingPage = () => {
           }}
           value={data.justDate}
         />
+        {/* Time chose box */}
+
         {data.justDate && lockedDates ? (
           <div className={styles.time_box}>
             {times?.map((time, i) => (
@@ -233,6 +253,8 @@ const BookingPage = () => {
         ) : (
           ""
         )}
+        {/* Loading icon */}
+        {data.justDate && !lockedDates ? <Image src={icon3} alt="loading" height={100} /> : ""}
         <button type="submit" className="yellow">
           Confirm booking
         </button>
