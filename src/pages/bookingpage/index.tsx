@@ -84,7 +84,8 @@ const BookingPage = () => {
       await getLockedDates(date)
         .then((res) => res.json())
         .then((json) => {
-          setLockedDates(json);
+          console.log(json.data);
+          setLockedDates(json.data);
         });
     } catch (error) {
       console.log(error);
@@ -99,9 +100,9 @@ const BookingPage = () => {
     setData((prev) => ({ ...prev, justDate: date }));
   };
 
-  //check if time
+  /*check if time*/
   const CheckIfAvailable = (time: Date) => {
-    let res = false;
+    /**/ let res = false;
     if (lockedDates) {
       lockedDates.map((e) => {
         if (e.time == format(time, "kk:mm")) {
