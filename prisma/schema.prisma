@@ -13,4 +13,5 @@ model Booking {
   number String
   email  String
   date   String
+  time   String
 }

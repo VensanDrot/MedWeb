@@ -1,4 +1,10 @@
-export const sendContactForm = async (data: any) => {
+export const sendContactForm = async (data: {
+  name: string;
+  subject: string;
+  email: string;
+  number: string;
+  message: string;
+}) => {
   return await fetch("/api/contact", {
     method: "POST",
     body: JSON.stringify(data),
@@ -9,6 +15,31 @@ export const sendContactForm = async (data: any) => {
   });
 };
 
-export const sendDateRequest = async () => {
-  return await fetch("/api/getDates");
+export const getLockedDates = async (date: string) => {
+  return await fetch("/api/getDates", {
+    method: "POST",
+    body: JSON.stringify(date),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+};
+
+export const getBookingInfo = async (data: {
+  name: string;
+  email: string;
+  number: string;
+  justDate: string;
+  dateTime: string;
+}) => {
+  console.log(data);
+  return await fetch("/api/bookDate", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
 };

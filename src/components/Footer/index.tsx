@@ -36,6 +36,13 @@ const Footer = () => {
         .then((json) => {
           if (!json.message.code) {
             setResult(json.message);
+            setData({
+              name: "",
+              subject: "",
+              email: "",
+              number: "",
+              message: "",
+            });
           } else {
             setResult("Error occured");
           }
@@ -47,7 +54,6 @@ const Footer = () => {
     } catch (error) {
       console.log(error);
     }
-    // set
   };
 
   return (

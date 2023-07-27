@@ -353,6 +353,6 @@ export const RecoveryHydrationPacks = [
 
 export const WorkTime = {
   Open: 9,
-  Close: 18,
+  Close: 20,
   interval: 1,
 };

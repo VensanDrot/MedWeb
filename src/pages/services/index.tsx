@@ -16,7 +16,7 @@ interface DivInterface {
 }
 
 const Services = () => {
-  const card = (e: DivInterface) => {
+  const card = (e: DivInterface, type: string) => {
     return (
       <div key={e.id} className={styles.element}>
         <Image src={e.icon ? icon1 : icon2} height={60} alt="icon" />
@@ -33,7 +33,19 @@ const Services = () => {
           <p>Wellness Hydration Packs</p>
           <span>{e.description}</span>
 
-          <Link href="#" className="yellow">
+          <Link
+            href={{
+              pathname: `bookingpage`,
+              query: {
+                icon: e.icon,
+                description: e.description,
+                product: e.name,
+                price: e.price,
+                type: type,
+              },
+            }}
+            className="yellow"
+          >
             Book Now
           </Link>
         </div>
@@ -82,7 +94,7 @@ const Services = () => {
                 <h1>Wellness Hydration Packs</h1>
               </div>
               {WellnessHydrationPacks.map((e) => {
-                return card(e);
+                return card(e, "Wellness Hydration Pack");
               })}
             </div>
             {/* */}
@@ -91,7 +103,7 @@ const Services = () => {
                 <h1>Recovery Hydration Packs </h1>
               </div>
               {RecoveryHydrationPacks.map((e) => {
-                return card(e);
+                return card(e, "Recovery Hydration Pack");
               })}
             </div>
             {/* */}

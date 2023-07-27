@@ -1,17 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../prisma";
-import { tr } from "date-fns/locale";
 
 const getDates = async (req: NextApiRequest, res: NextApiResponse) => {
-  /* 
-    if (req.method !== "POST") {
+  if (req.method !== "POST") {
     return res.json({ message: "Get request error" });
   }
-  */
+  const includingData = req.body;
 
   try {
-    const data = await prisma.booking.findMany();
-
+    const data = await prisma.booking.findMany({
+      where: {
+        date: includingData,
+      },
+    });
     return res.json(data);
   } catch (error) {
     return res.json({ error: error });
