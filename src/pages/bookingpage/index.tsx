@@ -34,15 +34,22 @@ interface lockedDates {
   time: string;
 }
 
+interface responseData {
+  date: string;
+  hours: string;
+  message: string;
+}
+
 const BookingPage = () => {
   //variables
+  const [serverRes, setServerRes] = useState<responseData>();
   const [lockedDates, setLockedDates] = useState<lockedDates[]>();
   const [data, setData] = useState<DateTime>({
     justDate: null,
     dateTime: null,
   });
   const [active, setActive] = useState<number | null>(null);
-
+  const [loading, setLoading] = useState<boolean>(false);
   const [customer, setCustomer] = useState<Customer>({
     name: "",
     email: "",
@@ -103,20 +110,18 @@ const BookingPage = () => {
   //check if time is free and if it's not expired
   const CheckIfAvailable = (time: Date) => {
     const now = new Date();
-    let hoursPassed = now.getHours() + " " + now.getMinutes();
+    let hoursPassed = now.getHours() + ":" + now.getMinutes();
 
     let res = false;
     if (lockedDates?.length !== 0 && lockedDates) {
       lockedDates.map((e) => {
         if (e.time == format(time, "kk:mm")) {
           res = true;
-        } else if (
-          format(time, "yyyy-MMMM-dd") === format(now, "yyyy-MMMM-dd") &&
-          format(time, "kk:mm") <= hoursPassed
-        ) {
-          res = true;
         }
       });
+    }
+    if (format(time, "yyyy-MMMM-dd") === format(now, "yyyy-MMMM-dd")) {
+      if (format(time, "kk:mm") <= hoursPassed) res = true;
     }
     return res;
   };
@@ -133,21 +138,30 @@ const BookingPage = () => {
   //form send handler
   const sendHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    setLoading(true);
     try {
       await getBookingInfo(customer)
         .then((res) => {
-          res.json();
-          console.log(res);
+          return res.json();
         })
-        .then((json) => {
-          console.log(json);
+        .then((data) => {
+          setServerRes(data);
         });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
 
+    setActive(null);
+    setCustomer({
+      name: "",
+      email: "",
+      number: "",
+      justDate: "",
+      dateTime: "",
+    });
+
     await getInfo(customer.justDate);
+    setLoading(false);
   };
 
   return (
@@ -165,6 +179,19 @@ const BookingPage = () => {
         </div>
       </div>
 
+      {serverRes ? (
+        <div className={styles.response}>
+          <h1>{serverRes.message}</h1>
+          <h3>
+            Reservation date: {serverRes.date} at {serverRes.hours}
+          </h3>
+
+          <p>We will contact you shortly to confirm your reservation</p>
+          <p>Thank you for chosing us!</p>
+        </div>
+      ) : (
+        ""
+      )}
       <form
         action=""
         onSubmit={(e) => {
@@ -255,8 +282,8 @@ const BookingPage = () => {
         )}
         {/* Loading icon */}
         {data.justDate && !lockedDates ? <Image src={icon3} alt="loading" height={100} /> : ""}
-        <button type="submit" className="yellow">
-          Confirm booking
+        <button type="submit" className={` ${loading ? "disabled button_disabled" : "yellow"}`}>
+          {loading ? <Image src={icon3} height={100} alt="loading" /> : "Confirm booking"}
         </button>
       </form>
     </div>

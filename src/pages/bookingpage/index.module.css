@@ -99,6 +99,30 @@
   color: white  ;
 }
 
+.response {
+      width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+ 
+.response > h1,
+.response > h3 {
+  font-size: 2.5rem;
+  color: var(--aqua);
+}
+
+.response > h3{
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.response > p {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
 
 @media screen and (min-width: 1200px) {
   .time_box {

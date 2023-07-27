@@ -6,7 +6,6 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.json({ message: "Get request error" });
   }
   const bookingData = req.body;
-  //console.log(bookingData);
   if (
     !bookingData ||
     !bookingData.name ||
@@ -19,6 +18,21 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
+    const find = await prisma.booking.findMany({
+      where: {
+        date: bookingData.justDate,
+        time: bookingData.dateTime,
+      },
+    });
+    console.log(find);
+    if (find.length !== 0) {
+      return res.status(400).json({ message: "This time is already booked" });
+    }
+  } catch (error) {
+    return res.status(400).json(error);
+  }
+
+  try {
     const book = await prisma.booking.create({
       data: {
         name: bookingData.name,
@@ -28,9 +42,13 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
         time: bookingData.dateTime,
       },
     });
-    return res.json({ message: "Success" });
+    return res.status(200).json({
+      message: "You are successfully booked!",
+      date: bookingData.justDate,
+      hours: bookingData.dateTime,
+    });
   } catch (error) {
-    return res.json({ error: error });
+    return res.status(200).json({ error: error });
   }
 };
 
