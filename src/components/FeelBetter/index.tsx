@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./index.module.css";
 
 const FeelBetter = () => {
@@ -12,9 +13,9 @@ const FeelBetter = () => {
           formulated with the essential nutrients your body needs to thrive.{" "}
         </p>
         <p>Feel great NOW with the immediate effects of IV hydration.</p>
-        <a href="" className="yellow">
+        <Link href="/services" className="yellow">
           Check Out Our Full Service Menu Here
-        </a>
+        </Link>
       </div>
     </div>
   );
