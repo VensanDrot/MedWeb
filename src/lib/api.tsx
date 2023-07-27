@@ -11,7 +11,6 @@ export const sendContactForm = async (data: any) => {
 
 /* */
 export const getLockedDates = async (date: string) => {
-  console.log(date);
   return await fetch("/api/getDates", {
     method: "POST",
     body: JSON.stringify(date),
@@ -29,7 +28,6 @@ export const getBookingInfo = async (data: {
   justDate: string;
   dateTime: string;
 }) => {
-  console.log(data);
   return await fetch("/api/bookDate", {
     method: "POST",
     body: JSON.stringify(data),

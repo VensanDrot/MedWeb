@@ -134,6 +134,8 @@ const BookingPage = () => {
     } catch (err) {
       console.log(err);
     }
+
+    await getInfo(customer.justDate);
   };
 
   return (
