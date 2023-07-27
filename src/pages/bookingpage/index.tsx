@@ -44,6 +44,7 @@ const BookingPage = () => {
   //variables
   const [serverRes, setServerRes] = useState<responseData>();
   const [lockedDates, setLockedDates] = useState<lockedDates[]>();
+  const [error, setError] = useState("");
   const [data, setData] = useState<DateTime>({
     justDate: null,
     dateTime: null,
@@ -139,6 +140,18 @@ const BookingPage = () => {
   const sendHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
+
+    if (
+      !customer ||
+      !customer.name ||
+      !customer.dateTime ||
+      !customer.email ||
+      !customer.justDate ||
+      !customer.number
+    ) {
+      setError("Some data is missing");
+      return;
+    }
     try {
       await getBookingInfo(customer)
         .then((res) => {
@@ -159,6 +172,10 @@ const BookingPage = () => {
       justDate: "",
       dateTime: "",
     });
+    setData({
+      justDate: null,
+      dateTime: null,
+    });
 
     await getInfo(customer.justDate);
     setLoading(false);
@@ -178,7 +195,7 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
-
+      <h1 className="error">{error}</h1>
       {serverRes ? (
         <div className={styles.response}>
           <h1>{serverRes.message}</h1>
