@@ -68,6 +68,8 @@ const BookingPage = () => {
     product: product,
   });
 
+  console.log(customer);
+
   //handling calendar data
   const getTimes = () => {
     if (!data.justDate) return;
@@ -140,6 +142,7 @@ const BookingPage = () => {
   //form send handler
   const sendHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setCustomer((prev) => ({ ...prev, product: searchParams?.get("product") }));
     setLoading(true);
 
     if (
@@ -148,39 +151,42 @@ const BookingPage = () => {
       !customer.dateTime ||
       !customer.email ||
       !customer.justDate ||
-      !customer.number
+      !customer.number ||
+      !customer.product
     ) {
-      setError("Some data is missing");
-      return;
-    }
-    try {
-      await getBookingInfo(customer)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setServerRes(data);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+      setLoading(false);
+      return setError("Some data is missing");
+    } else {
+      setError("");
+      try {
+        await getBookingInfo(customer)
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            setServerRes(data);
+          });
+      } catch (error) {
+        console.log(error);
+      }
 
-    setActive(null);
-    setCustomer({
-      name: "",
-      email: "",
-      number: "",
-      justDate: "",
-      dateTime: "",
-      product: product,
-    });
-    setData({
-      justDate: null,
-      dateTime: null,
-    });
+      setActive(null);
+      setCustomer({
+        name: "",
+        email: "",
+        number: "",
+        justDate: "",
+        dateTime: "",
+        product: product,
+      });
+      setData({
+        justDate: null,
+        dateTime: null,
+      });
 
-    await getInfo(customer.justDate);
-    setLoading(false);
+      await getInfo(customer.justDate);
+      setLoading(false);
+    }
   };
 
   return (
@@ -197,7 +203,7 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
-      <h1 className="error">{error}</h1>
+      <h1 className="error text_center">{error}</h1>
       {serverRes ? (
         <div className={styles.response}>
           <h1>{serverRes.message}</h1>

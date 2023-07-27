@@ -71,11 +71,30 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     };
 
+    const mailOptions1 = {
+      template: "bookedcus",
+      context: {
+        name: bookingData.name,
+        number: bookingData.number,
+        email: bookingData.email,
+        date: bookingData.justDate,
+        time: bookingData.dateTime,
+        product: bookingData.product,
+      },
+    };
+
     await transporter.sendMail({
       from: process.env.NEXT_PUBLIC_EMAIL,
       to: process.env.NEXT_PUBLIC_EMAIL,
       subject: `Booked for: ${bookingData.product}`,
       ...mailOptions,
+    });
+
+    await transporter.sendMail({
+      from: process.env.NEXT_PUBLIC_EMAIL,
+      to: bookingData.email,
+      subject: `Booked for: ${bookingData.product}`,
+      ...mailOptions1,
     });
 
     return res.status(200).json({

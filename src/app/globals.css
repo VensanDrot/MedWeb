@@ -134,6 +134,11 @@ section {
   background: transparent !important;
 }
 
+.text_center {
+  text-align: center;
+  font-size: 2.6  rem;
+}
+
 
 /* CAlENDAR */
 .react-calendar {
