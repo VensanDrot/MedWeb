@@ -9,7 +9,7 @@ const getDates = async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("here");
 
     console.log("here1");
-    return res.status(200).json(data);
+    return res.status(200).json("ds");
   } catch (error) {
     return res.status(400).json({ error: error });
   }
