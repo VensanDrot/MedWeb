@@ -13,7 +13,7 @@ const getDates = async (req: NextApiRequest, res: NextApiResponse) => {
         date: includingData,
       },
     });
-    return res.json(data);
+    return res.status(200).json(data);
   } catch (error) {
     return res.json({ error: error });
   }
