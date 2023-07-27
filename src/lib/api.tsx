@@ -13,7 +13,7 @@ export const sendContactForm = async (data: any) => {
 export const getLockedDates = async (date: string) => {
   console.log(date);
   return await fetch("/api/getDates", {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify(date),
     headers: {
       "Content-Type": "application/json",
