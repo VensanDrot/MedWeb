@@ -16,7 +16,7 @@ const handlebarOptions: any = {
 
 transporter.use("compile", hbs(handlebarOptions));
 
-const shareWithUs = async (data: { name: string; email: string; subject: string; message: string; number: string }) => {
+const shareWithUs = async (data: any) => {
   let mailOptions = {
     template: "message",
     context: {
