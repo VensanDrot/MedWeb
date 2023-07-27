@@ -111,6 +111,7 @@ const BookingPage = () => {
       });
     }
     return res;*/
+    return "";
   };
 
   const checkifActive = (i: number) => {
@@ -219,7 +220,7 @@ const BookingPage = () => {
               <div className={styles.date_buttons} key={`time-${i}`}>
                 <button
                   type="button"
-                  className={`${/*CheckIfAvailable(time) ? "disabled" : "" */} yellow  ${checkifActive(i)} `}
+                  className={`${CheckIfAvailable(time) ? "disabled" : ""} yellow  ${checkifActive(i)} `}
                   onClick={() => {
                     let ftime = format(time, "kk:mm");
                     setCustomer((prev) => ({ ...prev, dateTime: ftime }));
