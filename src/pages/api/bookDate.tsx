@@ -19,15 +19,6 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    await prisma.booking.create({
-      data: {
-        name: bookingData.name,
-        email: bookingData.email,
-        number: bookingData.number,
-        date: bookingData.justDate,
-        time: bookingData.dateTime,
-      },
-    });
     return res.json({ message: "Success" });
   } catch (error) {
     return res.json({ error: error });
