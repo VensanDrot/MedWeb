@@ -46,13 +46,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     };
 
     try {
-      await transporter.sendMail({
-        from: process.env.NEXT_PUBLIC_EMAIL,
-        to: data.email,
-        subject: data.subject,
-        ...mailOptions1,
-      });
-
       await transporter
         .sendMail({
           from: process.env.NEXT_PUBLIC_EMAIL,
