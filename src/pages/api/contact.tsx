@@ -22,8 +22,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.json({ message: "Issues with data" });
     }
 
-    console.log(data);
-
     const mailOptions = {
       template: "email",
       context: {
@@ -35,7 +33,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     };
 
+    const mailOptions1 = {
+      template: "message",
+      context: {
+        name: data.name,
+        subject: data.subject,
+        number: data.number,
+        email: data.email,
+        message: data.message,
+      },
+    };
+
     try {
+      await transporter.sendMail({
+        from: process.env.NEXT_PUBLIC_EMAIL,
+        to: process.env.NEXT_PUBLIC_EMAIL,
+        subject: data.subject,
+        ...mailOptions,
+      });
+
       await transporter.sendMail({
         from: process.env.NEXT_PUBLIC_EMAIL,
         to: data.email,
