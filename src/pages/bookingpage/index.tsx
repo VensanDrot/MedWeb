@@ -92,7 +92,7 @@ const BookingPage = () => {
   const HandleDate = (date: Date) => {
     let finish = format(date, "yyyy-MMMM-dd");
     getInfo(finish);
-    console.log(getInfo(finish));
+
     setCustomer((prev) => ({ ...prev, justDate: finish }));
     setData((prev) => ({ ...prev, justDate: date }));
   };

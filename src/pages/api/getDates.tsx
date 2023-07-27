@@ -8,18 +8,8 @@ const getDates = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const bookingDay = req.body;
-
-  try {
-    const data = await prisma.booking.findMany({
-      where: {
-        date: bookingDay,
-      },
-    });
-    console.log("here");
-    return res.status(200).json(data);
-  } catch (error) {
-    return res.status(400).json({ error: error });
-  }
+  console.log(bookingDay);
+  console.log(prisma);
 };
 
 export default getDates;
