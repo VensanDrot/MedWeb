@@ -99,7 +99,7 @@ const BookingPage = () => {
   //check if time
   const CheckIfAvailable = (time: Date) => {
     let res = false;
-    if (lockedDates) {
+    if (lockedDates?.length !== 0 && lockedDates) {
       lockedDates.map((e) => {
         if (e.time == format(time, "kk:mm")) {
           res = true;
