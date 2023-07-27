@@ -16,30 +16,6 @@ const handlebarOptions: any = {
 
 transporter.use("compile", hbs(handlebarOptions));
 
-const shareWithUs = async (data: any) => {
-  let mailOptions = {
-    template: "message",
-    context: {
-      name: data.name,
-      subject: data.subject,
-      number: data.number,
-      email: data.email,
-      message: data.message,
-    },
-  };
-
-  await transporter
-    .sendMail({
-      from: process.env.NEXT_PUBLIC_EMAIL,
-      to: process.env.NEXT_PUBLIC_EMAIL,
-      subject: data.subject,
-      ...mailOptions,
-    })
-    .then((res) => {
-      console.log(res);
-    });
-};
-
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const data = req.body;
@@ -58,8 +34,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     };
 
+    let mailOptions1 = {
+      template: "message",
+      context: {
+        name: data.name,
+        subject: data.subject,
+        number: data.number,
+        email: data.email,
+        message: data.message,
+      },
+    };
+
     try {
-      await shareWithUs(data);
+      await transporter.sendMail({
+        from: process.env.NEXT_PUBLIC_EMAIL,
+        to: data.email,
+        subject: data.subject,
+        ...mailOptions1,
+      });
+
       await transporter
         .sendMail({
           from: process.env.NEXT_PUBLIC_EMAIL,
