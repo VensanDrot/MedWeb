@@ -1,5 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../prisma";
+import path from "path";
+import hbs from "nodemailer-express-handlebars";
+import { transporter } from "../../config/nodemailer";
+
+const handlebarOptions: any = {
+  viewEngine: {
+    extName: ".handlebars",
+    partialsDir: path.resolve("./src/views"),
+    defaultLayout: false,
+  },
+  viewPath: path.resolve("./src/views"),
+  extName: ".handlebars",
+};
+
+transporter.use("compile", hbs(handlebarOptions));
 
 const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
@@ -12,7 +27,8 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
     !bookingData.email ||
     !bookingData.number ||
     !bookingData.justDate ||
-    !bookingData.dateTime
+    !bookingData.dateTime ||
+    !bookingData.product
   ) {
     return res.status(400).json({ message: "BookingData is missing" });
   }
@@ -24,7 +40,6 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
         time: bookingData.dateTime,
       },
     });
-    console.log(find);
     if (find.length !== 0) {
       return res.status(400).json({ message: "This time is already booked" });
     }
@@ -40,8 +55,29 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
         email: bookingData.email,
         date: bookingData.justDate,
         time: bookingData.dateTime,
+        product: bookingData.product,
       },
     });
+
+    const mailOptions = {
+      template: "booked",
+      context: {
+        name: bookingData.name,
+        number: bookingData.number,
+        email: bookingData.email,
+        date: bookingData.justDate,
+        time: bookingData.dateTime,
+        product: bookingData.product,
+      },
+    };
+
+    await transporter.sendMail({
+      from: process.env.NEXT_PUBLIC_EMAIL,
+      to: process.env.NEXT_PUBLIC_EMAIL,
+      subject: `Booked for: ${bookingData.product}`,
+      ...mailOptions,
+    });
+
     return res.status(200).json({
       message: "You are successfully booked!",
       date: bookingData.justDate,

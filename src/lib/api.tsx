@@ -33,6 +33,7 @@ export const getBookingInfo = async (data: {
   number: string;
   justDate: string;
   dateTime: string;
+  product: string | null | undefined;
 }) => {
   return await fetch("/api/bookDate", {
     method: "POST",

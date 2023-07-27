@@ -23,6 +23,7 @@ interface Customer {
   number: string;
   justDate: string;
   dateTime: string;
+  product: string | null | undefined;
 }
 
 interface lockedDates {
@@ -49,6 +50,13 @@ const BookingPage = () => {
     justDate: null,
     dateTime: null,
   });
+  // queries for data on the page
+  const searchParams = useSearchParams();
+  const product = searchParams?.get("product");
+  const description = searchParams?.get("description");
+  const icon = searchParams?.get("icon");
+  const price = searchParams?.get("price");
+  const type = searchParams?.get("type");
   const [active, setActive] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [customer, setCustomer] = useState<Customer>({
@@ -57,15 +65,8 @@ const BookingPage = () => {
     number: "",
     justDate: "",
     dateTime: "",
+    product: product,
   });
-
-  // queries for data on the page
-  const searchParams = useSearchParams();
-  const product = searchParams?.get("product");
-  const description = searchParams?.get("description");
-  const icon = searchParams?.get("icon");
-  const price = searchParams?.get("price");
-  const type = searchParams?.get("type");
 
   //handling calendar data
   const getTimes = () => {
@@ -171,6 +172,7 @@ const BookingPage = () => {
       number: "",
       justDate: "",
       dateTime: "",
+      product: product,
     });
     setData({
       justDate: null,
