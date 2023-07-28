@@ -191,7 +191,7 @@
 }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1140px) {
     .nav_link_mobile {
         display: none !important;
     }
@@ -201,7 +201,7 @@
 }
 
   
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1140px) {
    .Hamburger_container{ 
     display: flex;
     align-items: center

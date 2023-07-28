@@ -68,7 +68,7 @@ const BookingPage = () => {
     product: product,
   });
 
-  console.log(customer);
+  //console.log(customer);
 
   //handling calendar data
   const getTimes = () => {
@@ -206,13 +206,15 @@ const BookingPage = () => {
       <h1 className="error text_center">{error}</h1>
       {serverRes ? (
         <div className={styles.response}>
-          <h1>{serverRes.message}</h1>
-          <h3>
+          <h1 className={serverRes.message !== "You are successfully booked!" ? "error" : ""}>{serverRes.message}</h1>
+          <h3 hidden={serverRes.message !== "You are successfully booked!"}>
             Reservation date: {serverRes.date} at {serverRes.hours}
           </h3>
 
-          <p>We will contact you shortly to confirm your reservation</p>
-          <p>Thank you for chosing us!</p>
+          <p hidden={serverRes.message !== "You are successfully booked!"}>
+            We will contact you shortly to confirm your reservation
+          </p>
+          <p hidden={serverRes.message !== "You are successfully booked!"}>Thank you for chosing us!</p>
         </div>
       ) : (
         ""
