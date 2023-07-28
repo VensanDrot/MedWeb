@@ -114,18 +114,16 @@ const BookingPage = () => {
   //check if time is free and if it's not expired
   const CheckIfAvailable = (time: Date) => {
     const now = new Date();
-    let hoursPassed = now.getHours() + ":" + now.getMinutes();
-
     let res = false;
     if (lockedDates?.length !== 0 && lockedDates) {
       lockedDates.map((e) => {
-        if (e.time == format(time, "kk:mm")) {
+        if (e.time == time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true })) {
           res = true;
         }
       });
     }
     if (format(time, "yyyy-MMMM-dd") === format(now, "yyyy-MMMM-dd")) {
-      if (format(time, "kk:mm") <= hoursPassed) res = true;
+      if (format(time, "kk:mm") <= format(now, "kk:mm")) res = true;
     }
     return res;
   };
@@ -155,6 +153,7 @@ const BookingPage = () => {
       !customer.product
     ) {
       setLoading(false);
+      console.log(customer);
       return setError("Some data is missing");
     } else {
       setError("");
@@ -291,15 +290,17 @@ const BookingPage = () => {
               <div className={styles.date_buttons} key={`time-${i}`}>
                 <button
                   type="button"
-                  className={`${CheckIfAvailable(time) ? "disabled" : ""} yellow  ${checkifActive(i)} `}
+                  className={`${CheckIfAvailable(time) ? "disabled" : ""} yellow  ${checkifActive(i)} ${
+                    styles.t_button
+                  }`}
                   onClick={() => {
-                    let ftime = format(time, "kk:mm");
+                    let ftime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true });
                     setCustomer((prev) => ({ ...prev, dateTime: ftime }));
                     setActive(i);
                     setData((prev) => ({ ...prev, dateTime: time }));
                   }}
                 >
-                  {format(time, "kk:mm")}
+                  {time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true })}
                 </button>
               </div>
             ))}

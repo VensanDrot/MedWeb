@@ -61,12 +61,12 @@ const Footer = () => {
       <div className={styles.child_container}>
         <div>
           <h3>CONTACT US</h3>
-          <a href="" target="_blank">
-            smth@gmail.com
+          <a href="mailto:hydrationationiv@gmail.com" target="_blank">
+            hydrationationiv@gmail.com
           </a>
-          <a href="" target="_blank">
+          {/*<a href="" target="_blank">
             (999) 999 9999
-          </a>
+            </a> */}
           <a href="https://www.instagram.com/hydrationationiv/" target="_blank">
             <FaInstagram /> Instagram
           </a>

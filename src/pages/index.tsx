@@ -15,7 +15,7 @@ export default function Home() {
             At HydratioNation IV, our customized IV vitamin infusions deeply nourish and replenish for immediate
             results.
           </p>
-          <Link href="#" className="yellow">
+          <Link href="/services" className="yellow">
             BOOK NOW
           </Link>
         </div>

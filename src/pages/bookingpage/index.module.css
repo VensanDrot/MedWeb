@@ -124,6 +124,10 @@
   font-weight: 300;
 }
 
+.t_button {
+  width: 110px;
+}
+
 @media screen and (min-width: 1200px) {
   .time_box {
     width: 50%;
@@ -170,6 +174,15 @@
 
 .time_box {
   width: 100%;
+ 
 }
+
+ 
   
+}
+
+@media screen and (max-width: 550px) {
+    .time_box{
+       grid-template-columns: 1fr 1fr;
+    }
 }
