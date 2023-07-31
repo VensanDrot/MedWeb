@@ -281,6 +281,7 @@ const BookingPage = () => {
             HandleDate(date);
           }}
           value={data.justDate}
+          calendarType="hebrew"
         />
         {/* Time chose box */}
 
