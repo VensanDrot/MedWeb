@@ -89,3 +89,11 @@
     
      
 }
+
+@media screen and (max-width: 418px) {
+     
+    .child_container > div > a {
+    word-break: break-all;
+}
+     
+}

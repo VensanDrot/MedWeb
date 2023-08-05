@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import styles from "./index.module.css";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { sendContactForm } from "@/lib/api";
+import { AiOutlinePhone } from "react-icons/ai";
+import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   // data
@@ -62,11 +64,13 @@ const Footer = () => {
         <div>
           <h3>CONTACT US</h3>
           <a href="mailto:hydrationationiv@gmail.com" target="_blank">
+            <SiGmail />
             hydrationationiv@gmail.com
           </a>
-          {/*<a href="" target="_blank">
-            (999) 999 9999
-            </a> */}
+          <a href="tel:443-212-8237" target="_blank">
+            <AiOutlinePhone />
+            (443) 212 8237
+          </a>
           <a href="https://www.instagram.com/hydrationationiv/" target="_blank">
             <FaInstagram /> Instagram
           </a>

@@ -11,7 +11,7 @@ const Layout = ({ children }: PropsType) => {
     <div className="parent">
       <Nav />
       <main>{children}</main>
-      {/*<FloatingButtons /> */}
+      <FloatingButtons />
       <Footer />
     </div>
   );

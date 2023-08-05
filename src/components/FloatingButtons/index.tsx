@@ -6,8 +6,8 @@ const FloatingButtons = () => {
   return (
     <div className={styles.floating_Container}>
       <div className={` ${styles.floating_Container_mini} yellow `}>
-        <a href="#">
-          <AiOutlinePhone /> <span>(999) 999 9999</span>
+        <a href="tel:443-212-8237">
+          <AiOutlinePhone /> <span>(443) 212 8237</span>
         </a>
       </div>
     </div>
