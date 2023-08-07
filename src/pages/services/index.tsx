@@ -4,6 +4,7 @@ import Image from "next/image";
 import link from "../../img/HydrationServicesPageBanner.svg";
 import icon1 from "../../img/IVTherapyHydrationServices.svg";
 import icon2 from "../../img/InjectionTherapyHydrationServices.svg";
+import icon3 from "../../img/Spin.svg";
 import Link from "next/link";
 import { WellnessHydrationPacks, RecoveryHydrationPacks } from "@/components/Data";
 import getProducts from "../api/getProducts";
@@ -109,34 +110,38 @@ const Services = () => {
             </div>
           </div>
           {/* Services part */}
-          <div className={styles.services_menu_content}>
-            <div className={styles.menu_container}>
-              <div className={styles.menu_top}>
-                <h1>Wellness Hydration Packs</h1>
+          {products && products.length > 0 ? (
+            <div className={styles.services_menu_content}>
+              <div className={styles.menu_container}>
+                <div className={styles.menu_top}>
+                  <h1>Wellness Hydration Packs</h1>
+                </div>
+                {products
+                  ?.filter((e) => {
+                    return e.productType === "Wellness Hydration Pack";
+                  })
+                  .map((e) => {
+                    return card(e);
+                  })}
               </div>
-              {products
-                ?.filter((e) => {
-                  return e.productType === "Wellness Hydration Pack";
-                })
-                .map((e) => {
-                  return card(e);
-                })}
-            </div>
-            {/* */}
-            <div className={styles.menu_container}>
-              <div className={styles.menu_top}>
-                <h1>Recovery Hydration Packs </h1>
+              {/* */}
+              <div className={styles.menu_container}>
+                <div className={styles.menu_top}>
+                  <h1>Recovery Hydration Packs </h1>
+                </div>
+                {products
+                  ?.filter((e) => {
+                    return e.productType === "Recovery Hydration Pack";
+                  })
+                  .map((e) => {
+                    return card(e);
+                  })}
               </div>
-              {products
-                ?.filter((e) => {
-                  return e.productType === "Recovery Hydration Pack";
-                })
-                .map((e) => {
-                  return card(e);
-                })}
+              {/* */}
             </div>
-            {/* */}
-          </div>
+          ) : (
+            <Image src={icon3} alt="loading" height={100} />
+          )}
         </div>
       </div>
     </div>
