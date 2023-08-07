@@ -26,6 +26,13 @@
     min-height: 80vh;
 }
 
+.center_image {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
 .services_content {
     padding: 50px 0;
     width: 80%;

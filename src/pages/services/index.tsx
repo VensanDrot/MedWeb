@@ -140,7 +140,10 @@ const Services = () => {
               {/* */}
             </div>
           ) : (
-            <Image src={icon3} alt="loading" height={100} />
+            <div className={styles.center_image}>
+              {" "}
+              <Image src={icon3} alt="loading" height={200} />
+            </div>
           )}
         </div>
       </div>
