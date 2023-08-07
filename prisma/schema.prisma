@@ -16,3 +16,12 @@ model Booking {
   time    String
   product String
 }
+
+model Products {
+  id          Int     @id @default(autoincrement())
+  icon        Boolean
+  name        String
+  price       String
+  description String
+  productType String
+}

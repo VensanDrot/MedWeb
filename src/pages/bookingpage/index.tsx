@@ -4,10 +4,9 @@ import styles from "./index.module.css";
 import add from "date-fns/add";
 import format from "date-fns/format";
 import { WorkTime } from "@/components/Data";
-import { getLockedDates } from "@/lib/api";
+import { getLockedDates, getBookingInfo } from "@/lib/api";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { getBookingInfo } from "@/lib/api";
 import icon1 from "../../img/IVTherapyHydrationServices.svg";
 import icon2 from "../../img/InjectionTherapyHydrationServices.svg";
 import icon3 from "../../img/Spin.svg";
@@ -33,6 +32,7 @@ interface lockedDates {
   number: string;
   date: string;
   time: string;
+  productType: string;
 }
 
 interface responseData {
@@ -106,6 +106,7 @@ const BookingPage = () => {
   // handle calendare choise
   const HandleDate = (date: Date) => {
     let finish = format(date, "yyyy-MMMM-dd");
+
     getInfo(finish);
     setCustomer((prev) => ({ ...prev, justDate: finish }));
     setData((prev) => ({ ...prev, justDate: date }));

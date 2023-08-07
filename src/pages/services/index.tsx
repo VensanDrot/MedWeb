@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./index.module.css";
 import Image from "next/image";
 import link from "../../img/HydrationServicesPageBanner.svg";
@@ -6,17 +6,38 @@ import icon1 from "../../img/IVTherapyHydrationServices.svg";
 import icon2 from "../../img/InjectionTherapyHydrationServices.svg";
 import Link from "next/link";
 import { WellnessHydrationPacks, RecoveryHydrationPacks } from "@/components/Data";
+import getProducts from "../api/getProducts";
+import { tr } from "date-fns/locale";
+import { getProductsList } from "@/lib/api";
 
-interface DivInterface {
+interface ProductList {
   id: number;
   icon: boolean;
   name: string;
   price: string;
   description: string;
+  productType: string;
 }
 
 const Services = () => {
-  const card = (e: DivInterface, type: string) => {
+  const [products, setProducts] = useState<ProductList[]>();
+
+  useEffect(() => {
+    const getList = async () => {
+      try {
+        await getProductsList()
+          .then((res) => res.json())
+          .then((json) => {
+            setProducts(json);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getList();
+  }, []);
+
+  const card = (e: ProductList) => {
     return (
       <div key={e.id} className={styles.element}>
         <Image src={e.icon ? icon1 : icon2} height={60} alt="icon" />
@@ -30,7 +51,7 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <p>Wellness Hydration Packs</p>
+          <p>{e.productType}</p>
           <span>{e.description}</span>
 
           <Link
@@ -41,7 +62,7 @@ const Services = () => {
                 description: e.description,
                 product: e.name,
                 price: e.price,
-                type: type,
+                type: e.productType,
               },
             }}
             className="yellow"
@@ -93,18 +114,26 @@ const Services = () => {
               <div className={styles.menu_top}>
                 <h1>Wellness Hydration Packs</h1>
               </div>
-              {WellnessHydrationPacks.map((e) => {
-                return card(e, "Wellness Hydration Pack");
-              })}
+              {products
+                ?.filter((e) => {
+                  return e.productType === "Wellness Hydration Pack";
+                })
+                .map((e) => {
+                  return card(e);
+                })}
             </div>
             {/* */}
             <div className={styles.menu_container}>
               <div className={styles.menu_top}>
                 <h1>Recovery Hydration Packs </h1>
               </div>
-              {RecoveryHydrationPacks.map((e) => {
-                return card(e, "Recovery Hydration Pack");
-              })}
+              {products
+                ?.filter((e) => {
+                  return e.productType === "Recovery Hydration Pack";
+                })
+                .map((e) => {
+                  return card(e);
+                })}
             </div>
             {/* */}
           </div>

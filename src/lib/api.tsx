@@ -27,6 +27,12 @@ export const getLockedDates = async (date: string) => {
   });
 };
 
+export const getProductsList = async () => {
+  return await fetch("/api/getProducts", {
+    method: "POST",
+  });
+};
+
 export const getBookingInfo = async (data: {
   name: string;
   email: string;
