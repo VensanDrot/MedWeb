@@ -21,7 +21,7 @@ model Products {
   id          Int     @id @default(autoincrement())
   icon        Boolean
   name        String
-  price       String
+  price       Float
   description String
   productType String
 }

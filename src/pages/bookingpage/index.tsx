@@ -107,7 +107,7 @@ const BookingPage = () => {
   const HandleDate = (date: Date) => {
     let finish = format(date, "yyyy-MMMM-dd");
     getInfo(finish);
-    setCustomer((prev) => ({ ...prev, justDate: finish }));
+    setCustomer((prev) => ({ ...prev, justDate: finish, dateTime: "" }));
     setData((prev) => ({ ...prev, justDate: date }));
   };
 

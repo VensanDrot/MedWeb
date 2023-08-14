@@ -15,7 +15,7 @@ interface ProductList {
   id: number;
   icon: boolean;
   name: string;
-  price: string;
+  price: number;
   description: string;
   productType: string;
 }
