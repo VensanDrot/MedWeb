@@ -186,9 +186,7 @@
     .nav_box{
     width: 96vw;
    }
-    .nav_img {
-    height: 82px;
-}
+  
 }
 
 @media screen and (min-width: 1141px) {
@@ -211,9 +209,9 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
    .nav_img {
-    height: 75px;
+    height: 90px;
 }
    
 }

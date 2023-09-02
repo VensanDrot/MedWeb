@@ -3,7 +3,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
-import img from "../../img/logo.png";
+import img from "../../img/banner.svg";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Nav = () => {
@@ -33,7 +33,7 @@ const Nav = () => {
     >
       <div className={styles.nav_box}>
         <Link href="/" className={styles.nav_img_con}>
-          <Image src={img} alt="Chilling" className={styles.nav_img} height={95} />
+          <Image src={img} alt="Chilling" className={styles.nav_img} height={100} />
         </Link>
 
         <div className={styles.Hamburger_container}>
