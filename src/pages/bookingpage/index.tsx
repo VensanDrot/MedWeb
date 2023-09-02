@@ -132,8 +132,9 @@ const BookingPage = () => {
         }
       });
     }
+
     if (format(time, "yyyy-MMMM-dd") === format(now, "yyyy-MMMM-dd")) {
-      if (format(time, "kk:mm") <= format(now, "kk:mm")) res = true;
+      if (time < now) res = true;
     }
     return res;
   };
