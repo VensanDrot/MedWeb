@@ -8,20 +8,27 @@ datasource db {
 }
 
 model Booking {
-  id      Int    @id @default(autoincrement())
-  name    String
-  number  String
-  email   String
-  date    String
-  time    String
-  product String
+  id       Int    @id @default(autoincrement())
+  name     String
+  number   String
+  email    String
+  date     String
+  time     String
+  product  String
+  location String
 }
 
 model Products {
   id          Int     @id @default(autoincrement())
   icon        Boolean
   name        String
-  price       Float
   description String
   productType String
+  price       Float
+}
+
+model Admins {
+  id       Int    @id @default(autoincrement())
+  login    String
+  password String
 }

@@ -40,6 +40,7 @@ export const getBookingInfo = async (data: {
   justDate: string;
   dateTime: string;
   product: string | null | undefined;
+  address: string;
 }) => {
   return await fetch("/api/bookDate", {
     method: "POST",

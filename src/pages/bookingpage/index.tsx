@@ -23,6 +23,7 @@ interface Customer {
   justDate: string;
   dateTime: string;
   product: string | null | undefined;
+  address: string;
 }
 
 interface lockedDates {
@@ -33,6 +34,7 @@ interface lockedDates {
   date: string;
   time: string;
   productType: string;
+  address: string;
 }
 
 interface responseData {
@@ -45,11 +47,15 @@ const BookingPage = () => {
   //variables
   const [serverRes, setServerRes] = useState<responseData>();
   const [lockedDates, setLockedDates] = useState<lockedDates[]>();
+  //error
   const [error, setError] = useState("");
+
+  //calendar
   const [data, setData] = useState<DateTime>({
     justDate: null,
     dateTime: null,
   });
+
   // queries for data on the page
   const searchParams = useSearchParams();
   const product = searchParams?.get("product");
@@ -57,6 +63,7 @@ const BookingPage = () => {
   const icon = searchParams?.get("icon");
   const price = searchParams?.get("price");
   const type = searchParams?.get("type");
+  // for new data
   const [active, setActive] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [customer, setCustomer] = useState<Customer>({
@@ -66,7 +73,10 @@ const BookingPage = () => {
     justDate: "",
     dateTime: "",
     product: product,
+    address: "",
   });
+
+  //
 
   //console.log(customer);
 
@@ -150,10 +160,10 @@ const BookingPage = () => {
       !customer.email ||
       !customer.justDate ||
       !customer.number ||
-      !customer.product
+      !customer.product ||
+      !customer.address
     ) {
       setLoading(false);
-      console.log(customer);
       return setError("Some data is missing");
     } else {
       setError("");
@@ -177,6 +187,7 @@ const BookingPage = () => {
         justDate: "",
         dateTime: "",
         product: product,
+        address: "",
       });
       setData({
         justDate: null,
@@ -186,6 +197,10 @@ const BookingPage = () => {
       await getInfo(customer.justDate);
       setLoading(false);
     }
+  };
+
+  const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCustomer((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -228,36 +243,19 @@ const BookingPage = () => {
         {/* Customer data inputs */}
         <div className={styles.input_container}>
           <label htmlFor="input">Name:</label>
-          <input
-            type="text"
-            value={customer.name}
-            onChange={(e) => {
-              setCustomer((prev) => ({ ...prev, name: e.target.value }));
-            }}
-            placeholder="Name"
-            required
-          />
+          <input type="text" name="name" value={customer.name} onChange={handleEdit} placeholder="Name" required />
         </div>
         <div className={styles.input_container}>
           <label htmlFor="input">Email:</label>
-          <input
-            type="email"
-            value={customer.email}
-            onChange={(e) => {
-              setCustomer((prev) => ({ ...prev, email: e.target.value }));
-            }}
-            placeholder="Email"
-            required
-          />
+          <input type="email" name="email" value={customer.email} onChange={handleEdit} placeholder="Email" required />
         </div>
         <div className={styles.input_container}>
           <label htmlFor="input">Number:</label>
           <input
             type="text"
+            name="number"
             value={customer.number}
-            onChange={(e) => {
-              setCustomer((prev) => ({ ...prev, number: e.target.value }));
-            }}
+            onChange={handleEdit}
             placeholder="Number"
             onKeyPress={(event) => {
               if (!/[0-9]/.test(event.key)) {
@@ -266,6 +264,17 @@ const BookingPage = () => {
             }}
             minLength={9}
             maxLength={10}
+            required
+          />
+        </div>
+        <div className={styles.input_container}>
+          <label htmlFor="input">Address:</label>
+          <input
+            type="text"
+            name="address"
+            value={customer.address}
+            onChange={handleEdit}
+            placeholder="address"
             required
           />
         </div>
@@ -311,6 +320,7 @@ const BookingPage = () => {
         )}
         {/* Loading icon */}
         {data.justDate && !lockedDates ? <Image src={icon3} alt="loading" height={100} /> : ""}
+
         <button type="submit" className={` ${loading ? "disabled button_disabled" : "yellow"}`}>
           {loading ? <Image src={icon3} height={100} alt="loading" /> : "Confirm booking"}
         </button>

@@ -28,7 +28,8 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
     !bookingData.number ||
     !bookingData.justDate ||
     !bookingData.dateTime ||
-    !bookingData.product
+    !bookingData.product ||
+    !bookingData.address
   ) {
     return res.status(400).json({ message: "BookingData is missing" });
   }
@@ -56,6 +57,7 @@ const bookDate = async (req: NextApiRequest, res: NextApiResponse) => {
         date: bookingData.justDate,
         time: bookingData.dateTime,
         product: bookingData.product,
+        location: bookingData.address,
       },
     });
 
